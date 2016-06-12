@@ -70,17 +70,6 @@
                                     <constraint firstAttribute="height" constant="250" id="wSW-TS-XTk"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="100." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ejm-b0-LDd">
-                                <rect key="frame" x="242" y="336" width="116" height="88"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.81406250000000002" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="88" id="a1V-Jp-ZEX"/>
-                                    <constraint firstAttribute="width" constant="116" id="xxj-K3-lSj"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="BebasNeueRegular" family="Bebas Neue" pointSize="90"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Cw-ge-oV4">
                                 <rect key="frame" x="116" y="432" width="326" height="104"/>
                                 <subviews>
@@ -664,6 +653,13 @@
                                             </mask>
                                         </variation>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U12-QN-ciw">
+                                        <rect key="frame" x="278" y="0.0" width="36" height="38"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <action selector="didPressSunRiseSetBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j2E-pR-f0r"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -772,11 +768,22 @@
                                     </mask>
                                 </variation>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="100." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ejm-b0-LDd">
+                                <rect key="frame" x="242" y="336" width="116" height="88"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.81406250000000002" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="88" id="a1V-Jp-ZEX"/>
+                                    <constraint firstAttribute="width" constant="116" id="xxj-K3-lSj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="BebasNeueRegular" family="Bebas Neue" pointSize="90"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="DTa-iK-oBn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="9ey-yq-uCH"/>
-                            <constraint firstItem="4Cw-ge-oV4" firstAttribute="top" secondItem="ejm-b0-LDd" secondAttribute="bottom" constant="8" id="AH1-Eb-EAr"/>
+                            <constraint firstItem="4Cw-ge-oV4" firstAttribute="top" secondItem="ejm-b0-LDd" secondAttribute="bottom" priority="750" constant="8" id="AH1-Eb-EAr"/>
                             <constraint firstItem="dI8-Ir-tJG" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-10" id="FQx-q5-3Yn"/>
                             <constraint firstItem="5sj-x4-M1j" firstAttribute="top" secondItem="DTa-iK-oBn" secondAttribute="bottom" constant="8" id="GEj-wE-WTa"/>
                             <constraint firstAttribute="trailingMargin" secondItem="4Cw-ge-oV4" secondAttribute="trailing" id="O3Y-9u-0PG"/>
@@ -785,6 +792,7 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="4Cw-ge-oV4" secondAttribute="bottom" id="T4K-Ad-jIk"/>
                             <constraint firstItem="5sj-x4-M1j" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fxa-b8-Zv1"/>
                             <constraint firstItem="ejm-b0-LDd" firstAttribute="top" secondItem="5sj-x4-M1j" secondAttribute="bottom" constant="-30" id="oJJ-Dx-1Gx"/>
+                            <constraint firstItem="ejm-b0-LDd" firstAttribute="top" relation="greaterThanOrEqual" secondItem="5sj-x4-M1j" secondAttribute="bottom" constant="-60" id="rod-8U-UHO"/>
                             <constraint firstItem="DTa-iK-oBn" firstAttribute="top" secondItem="dI8-Ir-tJG" secondAttribute="bottom" constant="-5" id="tXo-bH-WPi"/>
                             <constraint firstItem="ejm-b0-LDd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uHW-J0-cxp"/>
                             <constraint firstItem="4Cw-ge-oV4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="vR3-i6-nUS"/>
@@ -798,6 +806,37 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="cityNameLbl" destination="DTa-iK-oBn" id="cgu-9k-vTL"/>
+                        <outlet property="currentDayLbl" destination="Dul-rm-BQp" id="iXz-kb-4YT"/>
+                        <outlet property="currentTempLbl" destination="ejm-b0-LDd" id="Q8T-Rj-AJQ"/>
+                        <outlet property="currentTimeLbl" destination="mc7-10-0ql" id="3Gr-Jr-1TZ"/>
+                        <outlet property="currentWeatherImg" destination="5sj-x4-M1j" id="pDT-Sl-1r6"/>
+                        <outlet property="dayFiveDayLbl" destination="qem-bL-3dQ" id="prY-SR-d05"/>
+                        <outlet property="dayFiveHighTempImg" destination="kfZ-KI-7MC" id="8bb-SA-2xm"/>
+                        <outlet property="dayFiveLowTempImg" destination="sEE-Bz-aLg" id="2rj-Xl-QNi"/>
+                        <outlet property="dayFiveWeatherImg" destination="Ao0-Kk-Iji" id="GuG-Gx-S5y"/>
+                        <outlet property="dayFourDayLbl" destination="xbN-pR-h6o" id="66h-Ip-6CJ"/>
+                        <outlet property="dayFourHighTempLbl" destination="bcN-zt-128" id="yCV-na-zRj"/>
+                        <outlet property="dayFourLowTempLbl" destination="o4V-83-m4v" id="rGf-0R-GLd"/>
+                        <outlet property="dayFourWeatherImg" destination="vn9-bd-42d" id="YW0-rT-gBp"/>
+                        <outlet property="dayOneDayLbl" destination="Cnz-Ig-b3k" id="Tp1-VF-XmJ"/>
+                        <outlet property="dayOneHighTempLbl" destination="Bx8-3W-qwk" id="ost-mc-lQy"/>
+                        <outlet property="dayOneLowTempLbl" destination="ixJ-g3-Fwf" id="AIR-fn-t0c"/>
+                        <outlet property="dayOneWeatherImg" destination="kpl-Bv-fRq" id="OWD-zx-gZ3"/>
+                        <outlet property="dayThreeDayLbl" destination="EN2-EU-OPA" id="8NJ-1J-BzX"/>
+                        <outlet property="dayThreeHighTempLbl" destination="m4S-oh-YZd" id="GsP-Xi-Rne"/>
+                        <outlet property="dayThreeLowTempLbl" destination="hpt-PJ-4R3" id="Z1f-LA-7vH"/>
+                        <outlet property="dayThreeWeatherImg" destination="yVW-YC-nBj" id="B1U-cC-s2T"/>
+                        <outlet property="dayTwoDayLbl" destination="duj-bi-Li8" id="Q5Z-6l-df6"/>
+                        <outlet property="dayTwoHighTempLbl" destination="Fm4-pQ-qe2" id="QP3-ii-xNx"/>
+                        <outlet property="dayTwoLowTempLbl" destination="bRI-L0-OLS" id="Eii-Vn-xKS"/>
+                        <outlet property="dayTwoWeatherImg" destination="OEC-FL-MhU" id="qFF-XV-JTP"/>
+                        <outlet property="percipitationChanceLbl" destination="bRp-lO-qcz" id="0vQ-i6-uJE"/>
+                        <outlet property="thermometerImg" destination="PT2-ON-Dyt" id="hpi-eR-pyX"/>
+                        <outlet property="todayHighTempLbl" destination="FCD-Ld-e2h" id="8yf-k6-ovq"/>
+                        <outlet property="todayLowTempLbl" destination="0Yb-jY-tQZ" id="kfR-lH-Amt"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
