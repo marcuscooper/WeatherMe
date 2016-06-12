@@ -58,7 +58,7 @@
                                     <constraint firstAttribute="height" constant="40" id="Mb4-Sn-YOw"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="BebasNeueRegular" family="Bebas Neue" pointSize="40"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="ThunderShowers" translatesAutoresizingMaskIntoConstraints="NO" id="5sj-x4-M1j">
@@ -73,14 +73,14 @@
                             <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Cw-ge-oV4">
                                 <rect key="frame" x="116" y="432" width="326" height="104"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="10:43PM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mc7-10-0ql">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="10:43PM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="mc7-10-0ql">
                                         <rect key="frame" x="8" y="0.0" width="54" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="SIi-Sy-rfY"/>
                                             <constraint firstAttribute="width" constant="54" id="agi-it-KzD"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="BebasNeueRegular" family="Bebas Neue" pointSize="20"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="widthClass=compact" misplaced="YES">
                                             <rect key="frame" x="19" y="478" width="54" height="21"/>
@@ -95,7 +95,7 @@
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="xLA-Iq-B4R"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="BebasNeueRegular" family="Bebas Neue" pointSize="17"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -129,7 +129,7 @@
                                             <constraint firstAttribute="height" constant="18" id="JrQ-QM-8C3"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="BebasNeueRegular" family="Bebas Neue" pointSize="14"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="widthClass=compact" misplaced="YES">
                                             <rect key="frame" x="120" y="478" width="24" height="18"/>
@@ -153,7 +153,7 @@
                                             <constraint firstAttribute="width" constant="24" id="cag-Nd-6Z3"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="BebasNeueRegular" family="Bebas Neue" pointSize="14"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="widthClass=compact" misplaced="YES">
                                             <rect key="frame" x="120" y="496" width="24" height="19"/>
@@ -178,7 +178,7 @@
                                             <constraint firstAttribute="width" constant="30" id="zo7-Kc-7DD"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="BebasNeueRegular" family="Bebas Neue" pointSize="14"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -190,13 +190,13 @@
                                             <rect key="frame" x="192" y="496" width="30" height="18"/>
                                         </variation>
                                     </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Umbrella" translatesAutoresizingMaskIntoConstraints="NO" id="Qna-ob-gb1">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Humidity" translatesAutoresizingMaskIntoConstraints="NO" id="Qna-ob-gb1">
                                         <rect key="frame" x="206" y="0.0" width="36" height="38"/>
                                         <constraints>
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="36" id="4Zz-Kc-KQC"/>
                                             <constraint firstAttribute="height" constant="42" id="EdZ-ZI-j1i"/>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="42" id="Ifb-mg-cda"/>
-                                            <constraint firstAttribute="width" constant="36" id="mWD-LN-fZ9"/>
+                                            <constraint firstAttribute="width" constant="30" id="mWD-LN-fZ9"/>
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -217,7 +217,7 @@
                                             <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="24" id="yGh-p0-AtS"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="BebasNeueRegular" family="Bebas Neue" pointSize="14"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -263,7 +263,7 @@
                                             <constraint firstAttribute="width" constant="33" id="WIc-Hi-3aj"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="BebasNeueRegular" family="Bebas Neue" pointSize="24"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="ThunderShowers" translatesAutoresizingMaskIntoConstraints="NO" id="kpl-Bv-fRq">
@@ -282,7 +282,7 @@
                                             <constraint firstAttribute="width" constant="15" id="zZy-LK-sAZ"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="BebasNeueRegular" family="Bebas Neue" pointSize="9"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -313,7 +313,7 @@
                                             <constraint firstAttribute="width" constant="15" id="yJa-Cx-3Fi"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="BebasNeueRegular" family="Bebas Neue" pointSize="9"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -345,7 +345,7 @@
                                             <constraint firstAttribute="height" constant="26" id="zpF-X1-Gwl"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="BebasNeueRegular" family="Bebas Neue" pointSize="24"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="ThunderShowers" translatesAutoresizingMaskIntoConstraints="NO" id="OEC-FL-MhU">
@@ -364,7 +364,7 @@
                                             <constraint firstAttribute="height" constant="19" id="bz5-h0-b6x"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="BebasNeueRegular" family="Bebas Neue" pointSize="9"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -384,8 +384,8 @@
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
-                                                <exclude reference="fHK-T9-3r7"/>
                                                 <exclude reference="BNF-W6-iz9"/>
+                                                <exclude reference="fHK-T9-3r7"/>
                                             </mask>
                                         </variation>
                                     </imageView>
@@ -398,7 +398,7 @@
                                             <constraint firstAttribute="width" constant="15" id="nN8-1p-hUQ"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="BebasNeueRegular" family="Bebas Neue" pointSize="9"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -427,7 +427,7 @@
                                             <constraint firstAttribute="width" constant="33" id="W4s-wW-TdP"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="BebasNeueRegular" family="Bebas Neue" pointSize="24"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="ThunderShowers" translatesAutoresizingMaskIntoConstraints="NO" id="yVW-YC-nBj">
@@ -446,12 +446,12 @@
                                             <constraint firstAttribute="height" constant="12" id="iqI-Qm-hST"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="BebasNeueRegular" family="Bebas Neue" pointSize="9"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
                                             <mask key="constraints">
-                                                <exclude reference="YPh-Et-cHz"/>
                                                 <exclude reference="V1r-TK-zGs"/>
+                                                <exclude reference="YPh-Et-cHz"/>
                                             </mask>
                                         </variation>
                                     </label>
@@ -480,12 +480,12 @@
                                             <constraint firstAttribute="height" constant="12" id="yTY-O7-gcx"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="BebasNeueRegular" family="Bebas Neue" pointSize="9"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
                                             <mask key="constraints">
-                                                <exclude reference="gTd-vf-PYh"/>
                                                 <exclude reference="C5A-ga-a5b"/>
+                                                <exclude reference="gTd-vf-PYh"/>
                                             </mask>
                                         </variation>
                                     </label>
@@ -509,7 +509,7 @@
                                             <constraint firstAttribute="height" constant="26" id="Ihe-Ej-Hcg"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="BebasNeueRegular" family="Bebas Neue" pointSize="24"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="ThunderShowers" translatesAutoresizingMaskIntoConstraints="NO" id="vn9-bd-42d">
@@ -528,7 +528,7 @@
                                             <constraint firstAttribute="width" constant="15" id="rRh-kh-bz8"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="BebasNeueRegular" family="Bebas Neue" pointSize="9"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -548,8 +548,8 @@
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
-                                                <exclude reference="TIV-EQ-Pod"/>
                                                 <exclude reference="Hs1-ED-12p"/>
+                                                <exclude reference="TIV-EQ-Pod"/>
                                             </mask>
                                         </variation>
                                     </imageView>
@@ -562,12 +562,12 @@
                                             <constraint firstAttribute="width" constant="24" id="r3P-Ar-wjW"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="BebasNeueRegular" family="Bebas Neue" pointSize="9"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
                                             <mask key="constraints">
-                                                <exclude reference="r3P-Ar-wjW"/>
                                                 <exclude reference="4kf-zc-JMo"/>
+                                                <exclude reference="r3P-Ar-wjW"/>
                                             </mask>
                                         </variation>
                                     </label>
@@ -591,7 +591,7 @@
                                             <constraint firstAttribute="height" constant="26" id="hvT-kI-NEd"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="BebasNeueRegular" family="Bebas Neue" pointSize="24"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="ThunderShowers" translatesAutoresizingMaskIntoConstraints="NO" id="Ao0-Kk-Iji">
@@ -610,12 +610,12 @@
                                             <constraint firstAttribute="width" constant="24" id="pg3-Va-Gjr"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="BebasNeueRegular" family="Bebas Neue" pointSize="9"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
                                             <mask key="constraints">
-                                                <exclude reference="pg3-Va-Gjr"/>
                                                 <exclude reference="njn-4W-jhL"/>
+                                                <exclude reference="pg3-Va-Gjr"/>
                                             </mask>
                                         </variation>
                                     </label>
@@ -630,8 +630,8 @@
                                         </constraints>
                                         <variation key="default">
                                             <mask key="constraints">
-                                                <exclude reference="jBu-PI-EMS"/>
                                                 <exclude reference="0ap-HP-lqs"/>
+                                                <exclude reference="jBu-PI-EMS"/>
                                             </mask>
                                         </variation>
                                     </imageView>
@@ -644,7 +644,7 @@
                                             <constraint firstAttribute="width" constant="15" id="pNa-6U-DMR"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="BebasNeueRegular" family="Bebas Neue" pointSize="9"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="default">
                                             <mask key="constraints">
@@ -653,13 +653,6 @@
                                             </mask>
                                         </variation>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U12-QN-ciw">
-                                        <rect key="frame" x="278" y="0.0" width="36" height="38"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <connections>
-                                            <action selector="didPressSunRiseSetBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="j2E-pR-f0r"/>
-                                        </connections>
-                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
@@ -691,13 +684,14 @@
                                     <constraint firstItem="bRI-L0-OLS" firstAttribute="leading" secondItem="Fm4-pQ-qe2" secondAttribute="leading" id="Edp-8k-0Fb"/>
                                     <constraint firstItem="gQy-hD-HYA" firstAttribute="leading" secondItem="ixJ-g3-Fwf" secondAttribute="trailing" constant="13" id="FFL-dG-i75"/>
                                     <constraint firstItem="6QP-30-tTY" firstAttribute="leading" secondItem="bcN-zt-128" secondAttribute="leading" constant="2" id="FM7-Mz-sR7"/>
-                                    <constraint firstItem="bRp-lO-qcz" firstAttribute="leading" secondItem="Qna-ob-gb1" secondAttribute="trailing" constant="-12" id="FmD-ne-MfF"/>
+                                    <constraint firstItem="bRp-lO-qcz" firstAttribute="leading" secondItem="Qna-ob-gb1" secondAttribute="trailing" constant="-3" id="FmD-ne-MfF"/>
                                     <constraint firstItem="ApJ-BU-KkV" firstAttribute="bottom" secondItem="yVW-YC-nBj" secondAttribute="bottom" id="GAP-ex-CkL"/>
                                     <constraint firstItem="sEE-Bz-aLg" firstAttribute="top" secondItem="jJi-cj-AN2" secondAttribute="bottom" constant="-1" id="GIg-Aw-d61"/>
                                     <constraint firstItem="OyY-KW-i2I" firstAttribute="centerY" secondItem="0Yb-jY-tQZ" secondAttribute="centerY" id="GKe-ED-Avn"/>
                                     <constraint firstItem="jJi-cj-AN2" firstAttribute="leading" secondItem="kfZ-KI-7MC" secondAttribute="leading" constant="2" id="Gfx-Ib-lF2"/>
                                     <constraint firstItem="kUz-sm-giq" firstAttribute="leading" secondItem="FCD-Ld-e2h" secondAttribute="leading" constant="3" id="Hkm-U3-MQh"/>
-                                    <constraint firstItem="veR-I1-bCS" firstAttribute="top" secondItem="Qna-ob-gb1" secondAttribute="top" id="I3i-La-wS8"/>
+                                    <constraint firstItem="veR-I1-bCS" firstAttribute="top" secondItem="Qna-ob-gb1" secondAttribute="top" constant="10" id="I3i-La-wS8"/>
+                                    <constraint firstItem="veR-I1-bCS" firstAttribute="top" secondItem="sdA-4S-Slw" secondAttribute="top" id="Ize-QL-2qZ"/>
                                     <constraint firstItem="hhY-yb-1nH" firstAttribute="top" secondItem="Bx8-3W-qwk" secondAttribute="bottom" constant="-2" id="LKu-vs-eLn"/>
                                     <constraint firstItem="m4S-oh-YZd" firstAttribute="leading" secondItem="yVW-YC-nBj" secondAttribute="trailing" constant="-1" id="LUA-M6-jXq"/>
                                     <constraint firstItem="o4V-83-m4v" firstAttribute="leading" secondItem="bcN-zt-128" secondAttribute="leading" id="NFu-6g-brv"/>
@@ -733,7 +727,7 @@
                                     <constraint firstItem="PT2-ON-Dyt" firstAttribute="leading" secondItem="Dul-rm-BQp" secondAttribute="trailing" constant="8" id="dvS-s9-f9y"/>
                                     <constraint firstItem="xbN-pR-h6o" firstAttribute="leading" secondItem="ApJ-BU-KkV" secondAttribute="trailing" constant="13" id="eQS-5z-9sU"/>
                                     <constraint firstItem="ZSh-aD-wDN" firstAttribute="leading" secondItem="bRI-L0-OLS" secondAttribute="trailing" constant="13" id="ecE-vb-7qQ"/>
-                                    <constraint firstItem="Qna-ob-gb1" firstAttribute="leading" secondItem="OyY-KW-i2I" secondAttribute="trailing" constant="10" id="ey0-KL-d7G"/>
+                                    <constraint firstItem="Qna-ob-gb1" firstAttribute="leading" secondItem="OyY-KW-i2I" secondAttribute="trailing" constant="9" id="ey0-KL-d7G"/>
                                     <constraint firstItem="QOk-Bt-nw3" firstAttribute="top" secondItem="xbN-pR-h6o" secondAttribute="top" id="f6F-Om-Ew1"/>
                                     <constraint firstItem="ZSh-aD-wDN" firstAttribute="top" secondItem="duj-bi-Li8" secondAttribute="top" id="fO7-9l-dim"/>
                                     <constraint firstItem="Dul-rm-BQp" firstAttribute="leading" secondItem="4Cw-ge-oV4" secondAttribute="leading" id="giW-vh-FAB"/>
@@ -765,6 +759,7 @@
                                         <exclude reference="kwU-BU-b84"/>
                                         <exclude reference="bZI-gd-WC6"/>
                                         <exclude reference="Aku-kh-Hkl"/>
+                                        <exclude reference="I3i-La-wS8"/>
                                     </mask>
                                 </variation>
                             </view>
@@ -776,7 +771,7 @@
                                     <constraint firstAttribute="width" constant="116" id="xxj-K3-lSj"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="BebasNeueRegular" family="Bebas Neue" pointSize="90"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -832,10 +827,11 @@
                         <outlet property="dayTwoHighTempLbl" destination="Fm4-pQ-qe2" id="QP3-ii-xNx"/>
                         <outlet property="dayTwoLowTempLbl" destination="bRI-L0-OLS" id="Eii-Vn-xKS"/>
                         <outlet property="dayTwoWeatherImg" destination="OEC-FL-MhU" id="qFF-XV-JTP"/>
-                        <outlet property="percipitationChanceLbl" destination="bRp-lO-qcz" id="0vQ-i6-uJE"/>
+                        <outlet property="humidityLbl" destination="bRp-lO-qcz" id="cSW-hq-k8g"/>
                         <outlet property="thermometerImg" destination="PT2-ON-Dyt" id="hpi-eR-pyX"/>
                         <outlet property="todayHighTempLbl" destination="FCD-Ld-e2h" id="8yf-k6-ovq"/>
                         <outlet property="todayLowTempLbl" destination="0Yb-jY-tQZ" id="kfR-lH-Amt"/>
+                        <outlet property="windSpeedLbl" destination="OyY-KW-i2I" id="R5y-h0-4JA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -844,11 +840,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Humidity" width="200" height="200"/>
         <image name="Location" width="200" height="200"/>
         <image name="SmallWind" width="200" height="200"/>
         <image name="SunRiseSet" width="200" height="200"/>
         <image name="ThermometerF" width="200" height="200"/>
         <image name="ThunderShowers" width="200" height="200"/>
-        <image name="Umbrella" width="200" height="200"/>
     </resources>
 </document>

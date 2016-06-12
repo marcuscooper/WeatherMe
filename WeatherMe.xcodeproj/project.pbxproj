@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		124B1D19197803AC4A686013 /* Pods_WeatherMe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5184DFCB243DC8AAC112330 /* Pods_WeatherMe.framework */; };
+		AB7B1CB71D0DE15200A8E3CB /* WeatherInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7B1CB61D0DE15200A8E3CB /* WeatherInstance.swift */; };
+		AB7B1CB91D0DE94C00A8E3CB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7B1CB81D0DE94C00A8E3CB /* Constants.swift */; };
 		ABC4243A1D0D104D00FB5942 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC424391D0D104D00FB5942 /* AppDelegate.swift */; };
 		ABC4243C1D0D104D00FB5942 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC4243B1D0D104D00FB5942 /* ViewController.swift */; };
 		ABC4243F1D0D104D00FB5942 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABC4243D1D0D104D00FB5942 /* Main.storyboard */; };
@@ -19,6 +21,8 @@
 /* Begin PBXFileReference section */
 		217756126DF4E96A9EA18429 /* Pods-WeatherMe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherMe.release.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherMe/Pods-WeatherMe.release.xcconfig"; sourceTree = "<group>"; };
 		7B1151BCD3399057F4697E50 /* Pods-WeatherMe.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherMe.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WeatherMe/Pods-WeatherMe.debug.xcconfig"; sourceTree = "<group>"; };
+		AB7B1CB61D0DE15200A8E3CB /* WeatherInstance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherInstance.swift; sourceTree = "<group>"; };
+		AB7B1CB81D0DE94C00A8E3CB /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		ABC424361D0D104D00FB5942 /* WeatherMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABC424391D0D104D00FB5942 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABC4243B1D0D104D00FB5942 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +63,40 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		AB7B1CB21D0DE06900A8E3CB /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				ABC4244D1D0D187000FB5942 /* BebasNeue.ttf */,
+				AB7B1CB81D0DE94C00A8E3CB /* Constants.swift */,
+			);
+			name = Utils;
+			sourceTree = "<group>";
+		};
+		AB7B1CB31D0DE07100A8E3CB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				ABC4243B1D0D104D00FB5942 /* ViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		AB7B1CB41D0DE07B00A8E3CB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ABC4243D1D0D104D00FB5942 /* Main.storyboard */,
+				ABC424421D0D104D00FB5942 /* LaunchScreen.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		AB7B1CB51D0DE08200A8E3CB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				AB7B1CB61D0DE15200A8E3CB /* WeatherInstance.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		ABC4242D1D0D104D00FB5942 = {
 			isa = PBXGroup;
 			children = (
@@ -80,12 +118,12 @@
 		ABC424381D0D104D00FB5942 /* WeatherMe */ = {
 			isa = PBXGroup;
 			children = (
-				ABC4244D1D0D187000FB5942 /* BebasNeue.ttf */,
+				AB7B1CB51D0DE08200A8E3CB /* Model */,
+				AB7B1CB41D0DE07B00A8E3CB /* View */,
+				AB7B1CB31D0DE07100A8E3CB /* Controller */,
+				AB7B1CB21D0DE06900A8E3CB /* Utils */,
 				ABC424391D0D104D00FB5942 /* AppDelegate.swift */,
-				ABC4243B1D0D104D00FB5942 /* ViewController.swift */,
-				ABC4243D1D0D104D00FB5942 /* Main.storyboard */,
 				ABC424401D0D104D00FB5942 /* Assets.xcassets */,
-				ABC424421D0D104D00FB5942 /* LaunchScreen.storyboard */,
 				ABC424451D0D104D00FB5942 /* Info.plist */,
 			);
 			path = WeatherMe;
@@ -215,7 +253,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				ABC4243C1D0D104D00FB5942 /* ViewController.swift in Sources */,
+				AB7B1CB71D0DE15200A8E3CB /* WeatherInstance.swift in Sources */,
 				ABC4243A1D0D104D00FB5942 /* AppDelegate.swift in Sources */,
+				AB7B1CB91D0DE94C00A8E3CB /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
