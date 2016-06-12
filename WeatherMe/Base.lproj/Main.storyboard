@@ -3,11 +3,10 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="BebasNeue.ttf">
-            <string>BebasNeueRegular</string>
-            <string>BebasNeueRegular</string>
             <string>BebasNeueRegular</string>
             <string>BebasNeueRegular</string>
             <string>BebasNeueRegular</string>
@@ -46,227 +45,758 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Charlotte" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uh6-oY-go8">
-                                <rect key="frame" x="129" y="79" width="342" height="44"/>
-                                <fontDescription key="fontDescription" name="BebasNeueRegular" family="Bebas Neue" pointSize="44"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Location" translatesAutoresizingMaskIntoConstraints="NO" id="p9y-uh-THh">
-                                <rect key="frame" x="270" y="28" width="60" height="57"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Location" translatesAutoresizingMaskIntoConstraints="NO" id="dI8-Ir-tJG">
+                                <rect key="frame" x="275" y="10" width="51" height="49"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="49" id="Wod-J3-XtR"/>
+                                    <constraint firstAttribute="width" constant="51" id="trj-vH-LkC"/>
+                                </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="MostlySunny" translatesAutoresizingMaskIntoConstraints="NO" id="bu1-3a-AFo">
-                                <rect key="frame" x="199" y="131" width="203" height="198"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Charlotte, NC" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="DTa-iK-oBn">
+                                <rect key="frame" x="20" y="69" width="560" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Mb4-Sn-YOw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="BebasNeueRegular" family="Bebas Neue" pointSize="40"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="ThunderShowers" translatesAutoresizingMaskIntoConstraints="NO" id="5sj-x4-M1j">
+                                <rect key="frame" x="180" y="117" width="240" height="248"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="350" id="EaO-xO-BE4">
+                                        <variation key="widthClass=compact" constant="250"/>
+                                    </constraint>
+                                    <constraint firstAttribute="height" constant="250" id="wSW-TS-XTk"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="73" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="23a-Mj-ezB">
-                                <rect key="frame" x="222" y="309" width="156" height="158"/>
-                                <fontDescription key="fontDescription" name="BebasNeueRegular" family="Bebas Neue" pointSize="100"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="100." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ejm-b0-LDd">
+                                <rect key="frame" x="242" y="336" width="116" height="88"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.81406250000000002" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="88" id="a1V-Jp-ZEX"/>
+                                    <constraint firstAttribute="width" constant="116" id="xxj-K3-lSj"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="BebasNeueRegular" family="Bebas Neue" pointSize="90"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="12:23PM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kft-Wo-HOe">
-                                <rect key="frame" x="20" y="479" width="62" height="21"/>
-                                <fontDescription key="fontDescription" name="BebasNeueRegular" family="Bebas Neue" pointSize="21"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Saturday" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r42-xK-ald">
-                                <rect key="frame" x="19" y="500" width="65" height="21"/>
-                                <fontDescription key="fontDescription" name="BebasNeueRegular" family="Bebas Neue" pointSize="19"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SUN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tmx-og-WYF">
-                                <rect key="frame" x="19" y="539" width="65" height="21"/>
-                                <fontDescription key="fontDescription" name="BebasNeueRegular" family="Bebas Neue" pointSize="19"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ThermometerF" translatesAutoresizingMaskIntoConstraints="NO" id="kAB-w3-VPW">
-                                <rect key="frame" x="123" y="478" width="41" height="42"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ThunderShowers" translatesAutoresizingMaskIntoConstraints="NO" id="vhy-oX-clJ">
-                                <rect key="frame" x="23" y="557" width="38" height="38"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ofi-Xq-NRK">
-                                <rect key="frame" x="171" y="475" width="27" height="21"/>
-                                <fontDescription key="fontDescription" name="BebasNeueRegular" family="Bebas Neue" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="35C-zM-e4b">
-                                <rect key="frame" x="171" y="497" width="27" height="2"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0bE-iw-TH4">
-                                <rect key="frame" x="171" y="500" width="27" height="21"/>
-                                <fontDescription key="fontDescription" name="BebasNeueRegular" family="Bebas Neue" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="9:00AM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SjX-QW-hZp">
-                                <rect key="frame" x="457" y="475" width="40" height="21"/>
-                                <fontDescription key="fontDescription" name="BebasNeueRegular" family="Bebas Neue" pointSize="15"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="VeP-0R-uCf">
-                                <rect key="frame" x="457" y="497" width="40" height="2"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="McA-qq-C5o">
-                                <rect key="frame" x="19" y="529" width="561" height="2"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="11:00PM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ea3-Jy-PT5">
-                                <rect key="frame" x="457" y="500" width="40" height="21"/>
-                                <fontDescription key="fontDescription" name="BebasNeueRegular" family="Bebas Neue" pointSize="15"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SmallWind" translatesAutoresizingMaskIntoConstraints="NO" id="68E-Zq-Fhh">
-                                <rect key="frame" x="216" y="475" width="46" height="45"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Umbrella" translatesAutoresizingMaskIntoConstraints="NO" id="uf9-hC-e3e">
-                                <rect key="frame" x="315" y="475" width="46" height="45"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="SunRiseSet" translatesAutoresizingMaskIntoConstraints="NO" id="VCE-2F-xal">
-                                <rect key="frame" x="409" y="475" width="46" height="45"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="24MPH" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4A2-IQ-RYW">
-                                <rect key="frame" x="256" y="499" width="41" height="21"/>
-                                <fontDescription key="fontDescription" name="BebasNeueRegular" family="Bebas Neue" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="100%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jsR-R9-HzO">
-                                <rect key="frame" x="343" y="499" width="35" height="21"/>
-                                <fontDescription key="fontDescription" name="BebasNeueRegular" family="Bebas Neue" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bm9-9l-Q4M">
-                                <rect key="frame" x="91" y="551" width="2" height="37"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2bh-ZC-k9R">
-                                <rect key="frame" x="174" y="551" width="2" height="37"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8JD-JO-fUg">
-                                <rect key="frame" x="257" y="551" width="2" height="37"/>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="TfB-9S-ysC">
-                                <rect key="frame" x="343" y="555" width="2" height="37"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Xm-Yv-bLp">
-                                <rect key="frame" x="62" y="557" width="17" height="19"/>
-                                <fontDescription key="fontDescription" name="BebasNeueRegular" family="Bebas Neue" pointSize="12"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YvC-DH-OaD">
-                                <rect key="frame" x="62" y="576" width="17" height="19"/>
-                                <fontDescription key="fontDescription" name="BebasNeueRegular" family="Bebas Neue" pointSize="12"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OmI-Qb-MOS">
-                                <rect key="frame" x="62" y="576" width="17" height="2"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="MON" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KwE-2E-oQi">
-                                <rect key="frame" x="101" y="539" width="65" height="21"/>
-                                <fontDescription key="fontDescription" name="BebasNeueRegular" family="Bebas Neue" pointSize="19"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ThunderShowers" translatesAutoresizingMaskIntoConstraints="NO" id="ZZX-oq-Sx2">
-                                <rect key="frame" x="105" y="557" width="38" height="38"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nns-WR-8LL">
-                                <rect key="frame" x="144" y="557" width="17" height="19"/>
-                                <fontDescription key="fontDescription" name="BebasNeueRegular" family="Bebas Neue" pointSize="12"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uYS-Gx-6Ef">
-                                <rect key="frame" x="144" y="576" width="17" height="19"/>
-                                <fontDescription key="fontDescription" name="BebasNeueRegular" family="Bebas Neue" pointSize="12"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aIs-7B-tff">
-                                <rect key="frame" x="144" y="576" width="17" height="2"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TUE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YZj-aA-90x">
-                                <rect key="frame" x="184" y="539" width="65" height="21"/>
-                                <fontDescription key="fontDescription" name="BebasNeueRegular" family="Bebas Neue" pointSize="19"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ThunderShowers" translatesAutoresizingMaskIntoConstraints="NO" id="Ktd-mB-7tS">
-                                <rect key="frame" x="188" y="557" width="38" height="38"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bc9-KP-fPM">
-                                <rect key="frame" x="227" y="557" width="17" height="19"/>
-                                <fontDescription key="fontDescription" name="BebasNeueRegular" family="Bebas Neue" pointSize="12"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JCE-iV-RZD">
-                                <rect key="frame" x="227" y="576" width="17" height="19"/>
-                                <fontDescription key="fontDescription" name="BebasNeueRegular" family="Bebas Neue" pointSize="12"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GPa-bC-FGS">
-                                <rect key="frame" x="227" y="576" width="17" height="2"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="WED" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nv4-aM-PsF">
-                                <rect key="frame" x="270" y="539" width="65" height="21"/>
-                                <fontDescription key="fontDescription" name="BebasNeueRegular" family="Bebas Neue" pointSize="19"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ThunderShowers" translatesAutoresizingMaskIntoConstraints="NO" id="6L2-xt-gHV">
-                                <rect key="frame" x="274" y="557" width="38" height="38"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mwa-w7-t0I">
-                                <rect key="frame" x="313" y="557" width="17" height="19"/>
-                                <fontDescription key="fontDescription" name="BebasNeueRegular" family="Bebas Neue" pointSize="12"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="27n-dh-xNz">
-                                <rect key="frame" x="313" y="576" width="17" height="19"/>
-                                <fontDescription key="fontDescription" name="BebasNeueRegular" family="Bebas Neue" pointSize="12"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RGP-cD-4xz">
-                                <rect key="frame" x="313" y="576" width="17" height="2"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="TUE" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v8a-Zl-1XQ">
-                                <rect key="frame" x="353" y="539" width="65" height="21"/>
-                                <fontDescription key="fontDescription" name="BebasNeueRegular" family="Bebas Neue" pointSize="19"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="ThunderShowers" translatesAutoresizingMaskIntoConstraints="NO" id="IDA-X6-PR2">
-                                <rect key="frame" x="357" y="557" width="38" height="38"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UNo-zu-50L">
-                                <rect key="frame" x="396" y="557" width="17" height="19"/>
-                                <fontDescription key="fontDescription" name="BebasNeueRegular" family="Bebas Neue" pointSize="12"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="46M-jk-bbn">
-                                <rect key="frame" x="396" y="576" width="17" height="19"/>
-                                <fontDescription key="fontDescription" name="BebasNeueRegular" family="Bebas Neue" pointSize="12"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="19S-vk-3Ab">
-                                <rect key="frame" x="396" y="576" width="17" height="2"/>
-                            </imageView>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4Cw-ge-oV4">
+                                <rect key="frame" x="116" y="432" width="326" height="104"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="10:43PM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mc7-10-0ql">
+                                        <rect key="frame" x="8" y="0.0" width="54" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="SIi-Sy-rfY"/>
+                                            <constraint firstAttribute="width" constant="54" id="agi-it-KzD"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="BebasNeueRegular" family="Bebas Neue" pointSize="20"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="19" y="478" width="54" height="21"/>
+                                        </variation>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="SATURDAY" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" translatesAutoresizingMaskIntoConstraints="NO" id="Dul-rm-BQp">
+                                        <rect key="frame" x="8" y="17" width="54" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="52" id="TNx-v4-Pbl"/>
+                                            <constraint firstAttribute="height" constant="21" id="W3g-PM-Uqy"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="54" id="Wca-6l-uuQ"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="xLA-Iq-B4R"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="BebasNeueRegular" family="Bebas Neue" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="Wca-6l-uuQ"/>
+                                                <exclude reference="xLA-Iq-B4R"/>
+                                            </mask>
+                                        </variation>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="ThermometerF" translatesAutoresizingMaskIntoConstraints="NO" id="PT2-ON-Dyt">
+                                        <rect key="frame" x="70" y="0.0" width="34" height="38"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="34" id="09M-3W-OKd"/>
+                                            <constraint firstAttribute="height" constant="38" id="HEU-hW-eue"/>
+                                            <constraint firstAttribute="width" constant="34" id="Svv-U2-hbi"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="42" id="wWV-6S-sdk"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="09M-3W-OKd"/>
+                                                <exclude reference="wWV-6S-sdk"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="86" y="475" width="34" height="42"/>
+                                        </variation>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="100." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FCD-Ld-e2h">
+                                        <rect key="frame" x="104" y="2" width="24" height="18"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="24" id="9jZ-k9-aFP"/>
+                                            <constraint firstAttribute="height" constant="18" id="JrQ-QM-8C3"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="BebasNeueRegular" family="Bebas Neue" pointSize="14"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="120" y="478" width="24" height="18"/>
+                                        </variation>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kUz-sm-giq">
+                                        <rect key="frame" x="106" y="22" width="24" height="1"/>
+                                        <color key="backgroundColor" red="0.70196078431372544" green="0.70196078431372544" blue="0.70196078431372544" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="19" id="MIH-xP-xd9"/>
+                                            <constraint firstAttribute="height" constant="1" id="kpa-wM-ApK"/>
+                                        </constraints>
+                                        <variation key="widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="124" y="496" width="24" height="1"/>
+                                        </variation>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="100." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Yb-jY-tQZ">
+                                        <rect key="frame" x="104" y="23" width="24" height="19"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="19" id="1EJ-3n-lSG"/>
+                                            <constraint firstAttribute="width" constant="24" id="cag-Nd-6Z3"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="BebasNeueRegular" family="Bebas Neue" pointSize="14"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="120" y="496" width="24" height="19"/>
+                                        </variation>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="SmallWind" translatesAutoresizingMaskIntoConstraints="NO" id="sdA-4S-Slw">
+                                        <rect key="frame" x="136" y="0.0" width="30" height="38"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="YnP-OX-IOF"/>
+                                            <constraint firstAttribute="height" constant="38" id="n96-EA-K1M"/>
+                                        </constraints>
+                                        <variation key="widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="161" y="475" width="30" height="42"/>
+                                        </variation>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="25MPH" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OyY-KW-i2I">
+                                        <rect key="frame" x="166" y="23" width="30" height="18"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="18" id="F7e-ks-nif"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="24" id="JaC-Lv-7Pf"/>
+                                            <constraint firstAttribute="height" constant="18" id="d1e-WM-96c"/>
+                                            <constraint firstAttribute="width" constant="30" id="zo7-Kc-7DD"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="BebasNeueRegular" family="Bebas Neue" pointSize="14"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="F7e-ks-nif"/>
+                                                <exclude reference="JaC-Lv-7Pf"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="192" y="496" width="30" height="18"/>
+                                        </variation>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Umbrella" translatesAutoresizingMaskIntoConstraints="NO" id="Qna-ob-gb1">
+                                        <rect key="frame" x="206" y="0.0" width="36" height="38"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="36" id="4Zz-Kc-KQC"/>
+                                            <constraint firstAttribute="height" constant="42" id="EdZ-ZI-j1i"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="42" id="Ifb-mg-cda"/>
+                                            <constraint firstAttribute="width" constant="36" id="mWD-LN-fZ9"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="4Zz-Kc-KQC"/>
+                                                <exclude reference="Ifb-mg-cda"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="230" y="475" width="36" height="42"/>
+                                        </variation>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="100%" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bRp-lO-qcz">
+                                        <rect key="frame" x="244" y="23" width="26" height="18"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="18" id="2zn-vl-LHb"/>
+                                            <constraint firstAttribute="width" constant="30" id="TOt-Mb-l5K"/>
+                                            <constraint firstAttribute="height" constant="18" id="eOP-a1-pUk"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="24" id="yGh-p0-AtS"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="BebasNeueRegular" family="Bebas Neue" pointSize="14"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="2zn-vl-LHb"/>
+                                                <exclude reference="yGh-p0-AtS"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="250" y="496" width="26" height="18"/>
+                                        </variation>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="SunRiseSet" translatesAutoresizingMaskIntoConstraints="NO" id="veR-I1-bCS">
+                                        <rect key="frame" x="278" y="0.0" width="36" height="38"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="36" id="1v1-ed-zCN"/>
+                                            <constraint firstAttribute="width" constant="36" id="SaB-Am-DFs">
+                                                <variation key="widthClass=compact" constant="36"/>
+                                            </constraint>
+                                            <constraint firstAttribute="height" constant="42" id="XFQ-VQ-xnF"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="42" id="f49-h9-COJ"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="1v1-ed-zCN"/>
+                                                <exclude reference="f49-h9-COJ"/>
+                                            </mask>
+                                        </variation>
+                                        <variation key="widthClass=compact" misplaced="YES">
+                                            <rect key="frame" x="284" y="475" width="36" height="42"/>
+                                        </variation>
+                                    </imageView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wsh-Cf-FDk">
+                                        <rect key="frame" x="0.0" y="46" width="326" height="2"/>
+                                        <color key="backgroundColor" red="0.70196078431372544" green="0.70196078431372544" blue="0.70196078431372544" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="2" id="LJc-e5-Sfr"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="WED" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cnz-Ig-b3k">
+                                        <rect key="frame" x="8" y="52" width="33" height="26"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="26" id="UCo-P3-C6a"/>
+                                            <constraint firstAttribute="width" constant="33" id="WIc-Hi-3aj"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="BebasNeueRegular" family="Bebas Neue" pointSize="24"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="ThunderShowers" translatesAutoresizingMaskIntoConstraints="NO" id="kpl-Bv-fRq">
+                                        <rect key="frame" x="8" y="78" width="25" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="ANs-r3-F0L"/>
+                                            <constraint firstAttribute="width" constant="25" id="lLf-yx-gtU"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="100." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bx8-3W-qwk">
+                                        <rect key="frame" x="34" y="79" width="15" height="12"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="24" id="N4S-Fs-CDL"/>
+                                            <constraint firstAttribute="height" constant="12" id="UNL-xB-C0W"/>
+                                            <constraint firstAttribute="height" constant="19" id="gYq-bv-hak"/>
+                                            <constraint firstAttribute="width" constant="15" id="zZy-LK-sAZ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="BebasNeueRegular" family="Bebas Neue" pointSize="9"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="N4S-Fs-CDL"/>
+                                                <exclude reference="gYq-bv-hak"/>
+                                            </mask>
+                                        </variation>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gQy-hD-HYA">
+                                        <rect key="frame" x="57" y="52" width="2" height="51"/>
+                                        <color key="backgroundColor" red="0.70196078429999997" green="0.70196078429999997" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="2" id="3ZS-P9-she"/>
+                                            <constraint firstAttribute="height" constant="51" id="9tA-JB-Y8v"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="9tA-JB-Y8v"/>
+                                            </mask>
+                                        </variation>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="100." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ixJ-g3-Fwf">
+                                        <rect key="frame" x="34" y="91" width="15" height="12"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="24" id="CQy-Iy-Dz8"/>
+                                            <constraint firstAttribute="height" constant="12" id="Pca-xf-22B"/>
+                                            <constraint firstAttribute="height" constant="19" id="m1m-Ad-PwH"/>
+                                            <constraint firstAttribute="width" constant="15" id="yJa-Cx-3Fi"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="BebasNeueRegular" family="Bebas Neue" pointSize="9"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="CQy-Iy-Dz8"/>
+                                                <exclude reference="m1m-Ad-PwH"/>
+                                            </mask>
+                                        </variation>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hhY-yb-1nH">
+                                        <rect key="frame" x="37" y="94" width="13" height="1"/>
+                                        <color key="backgroundColor" red="0.70196078431372544" green="0.70196078431372544" blue="0.70196078431372544" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="12" id="2Yc-rY-jHR"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="b7T-g1-ODy"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="13" id="fq0-NR-EoJ"/>
+                                            <constraint firstAttribute="height" constant="1" id="gc3-VD-lhF"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="b7T-g1-ODy"/>
+                                                <exclude reference="fq0-NR-EoJ"/>
+                                            </mask>
+                                        </variation>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="WED" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="duj-bi-Li8">
+                                        <rect key="frame" x="67" y="52" width="33" height="26"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="33" id="jP5-1Q-buQ"/>
+                                            <constraint firstAttribute="height" constant="26" id="zpF-X1-Gwl"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="BebasNeueRegular" family="Bebas Neue" pointSize="24"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="ThunderShowers" translatesAutoresizingMaskIntoConstraints="NO" id="OEC-FL-MhU">
+                                        <rect key="frame" x="67" y="78" width="25" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="25" id="EEN-Nl-stm"/>
+                                            <constraint firstAttribute="height" constant="25" id="lND-Ux-uod"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="100." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fm4-pQ-qe2">
+                                        <rect key="frame" x="92" y="78" width="15" height="12"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="24" id="BhQ-bE-mpp"/>
+                                            <constraint firstAttribute="height" constant="12" id="Ngw-T7-lJF"/>
+                                            <constraint firstAttribute="width" constant="15" id="Tpv-WA-sOb"/>
+                                            <constraint firstAttribute="height" constant="19" id="bz5-h0-b6x"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="BebasNeueRegular" family="Bebas Neue" pointSize="9"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="BhQ-bE-mpp"/>
+                                                <exclude reference="bz5-h0-b6x"/>
+                                            </mask>
+                                        </variation>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Is7-so-oCH">
+                                        <rect key="frame" x="95" y="90" width="13" height="1"/>
+                                        <color key="backgroundColor" red="0.70196078429999997" green="0.70196078429999997" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="13" id="BNF-W6-iz9"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="fHK-T9-3r7"/>
+                                            <constraint firstAttribute="width" constant="12" id="pG0-HE-q9h"/>
+                                            <constraint firstAttribute="height" constant="1" id="pwk-4d-JPw"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="fHK-T9-3r7"/>
+                                                <exclude reference="BNF-W6-iz9"/>
+                                            </mask>
+                                        </variation>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="100." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bRI-L0-OLS">
+                                        <rect key="frame" x="92" y="92" width="15" height="12"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="24" id="20p-VA-2uv"/>
+                                            <constraint firstAttribute="height" constant="12" id="3gh-Qf-k1z"/>
+                                            <constraint firstAttribute="height" constant="19" id="ev0-BR-z1u"/>
+                                            <constraint firstAttribute="width" constant="15" id="nN8-1p-hUQ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="BebasNeueRegular" family="Bebas Neue" pointSize="9"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="20p-VA-2uv"/>
+                                                <exclude reference="ev0-BR-z1u"/>
+                                            </mask>
+                                        </variation>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZSh-aD-wDN">
+                                        <rect key="frame" x="115" y="52" width="2" height="51"/>
+                                        <color key="backgroundColor" red="0.70196078429999997" green="0.70196078429999997" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="2" id="3X9-12-jBe"/>
+                                            <constraint firstAttribute="height" constant="51" id="w6b-jl-fWl"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="w6b-jl-fWl"/>
+                                            </mask>
+                                        </variation>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="WED" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EN2-EU-OPA">
+                                        <rect key="frame" x="125" y="52" width="33" height="26"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="26" id="LD1-kd-GWu"/>
+                                            <constraint firstAttribute="width" constant="33" id="W4s-wW-TdP"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="BebasNeueRegular" family="Bebas Neue" pointSize="24"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="ThunderShowers" translatesAutoresizingMaskIntoConstraints="NO" id="yVW-YC-nBj">
+                                        <rect key="frame" x="125" y="78" width="25" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="25" id="FRU-0m-uam"/>
+                                            <constraint firstAttribute="height" constant="25" id="HLj-gv-BpR"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="100." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m4S-oh-YZd">
+                                        <rect key="frame" x="150" y="79" width="15" height="12"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="19" id="V1r-TK-zGs"/>
+                                            <constraint firstAttribute="width" constant="24" id="YPh-Et-cHz"/>
+                                            <constraint firstAttribute="width" constant="15" id="crR-ZV-7gJ"/>
+                                            <constraint firstAttribute="height" constant="12" id="iqI-Qm-hST"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="BebasNeueRegular" family="Bebas Neue" pointSize="9"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="YPh-Et-cHz"/>
+                                                <exclude reference="V1r-TK-zGs"/>
+                                            </mask>
+                                        </variation>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Lnc-jh-QJz">
+                                        <rect key="frame" x="153" y="92" width="13" height="1"/>
+                                        <color key="backgroundColor" red="0.70196078429999997" green="0.70196078429999997" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="1" id="SEI-0G-cJa"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="WOX-NB-6b1"/>
+                                            <constraint firstAttribute="width" constant="12" id="tdl-mf-jjb"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="13" id="uHr-oe-q10"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="WOX-NB-6b1"/>
+                                                <exclude reference="uHr-oe-q10"/>
+                                            </mask>
+                                        </variation>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="100." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hpt-PJ-4R3">
+                                        <rect key="frame" x="150" y="92" width="15" height="12"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="15" id="8W0-Rq-1hc"/>
+                                            <constraint firstAttribute="height" constant="19" id="C5A-ga-a5b"/>
+                                            <constraint firstAttribute="width" constant="24" id="gTd-vf-PYh"/>
+                                            <constraint firstAttribute="height" constant="12" id="yTY-O7-gcx"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="BebasNeueRegular" family="Bebas Neue" pointSize="9"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="gTd-vf-PYh"/>
+                                                <exclude reference="C5A-ga-a5b"/>
+                                            </mask>
+                                        </variation>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ApJ-BU-KkV">
+                                        <rect key="frame" x="173" y="52" width="2" height="51"/>
+                                        <color key="backgroundColor" red="0.70196078429999997" green="0.70196078429999997" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="2" id="7CF-cG-Dqv"/>
+                                            <constraint firstAttribute="height" constant="51" id="l7f-FH-zRR"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="l7f-FH-zRR"/>
+                                            </mask>
+                                        </variation>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="WED" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xbN-pR-h6o">
+                                        <rect key="frame" x="183" y="52" width="33" height="26"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="33" id="Exd-Y5-0hr"/>
+                                            <constraint firstAttribute="height" constant="26" id="Ihe-Ej-Hcg"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="BebasNeueRegular" family="Bebas Neue" pointSize="24"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="ThunderShowers" translatesAutoresizingMaskIntoConstraints="NO" id="vn9-bd-42d">
+                                        <rect key="frame" x="183" y="79" width="25" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="25" id="J6X-hQ-wim"/>
+                                            <constraint firstAttribute="height" constant="25" id="ZcJ-wp-6yz"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="100." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bcN-zt-128">
+                                        <rect key="frame" x="208" y="79" width="15" height="12"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="12" id="3q8-8h-e7P"/>
+                                            <constraint firstAttribute="width" constant="24" id="WGn-Y6-MAb"/>
+                                            <constraint firstAttribute="height" constant="19" id="Wg0-Fs-CSu"/>
+                                            <constraint firstAttribute="width" constant="15" id="rRh-kh-bz8"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="BebasNeueRegular" family="Bebas Neue" pointSize="9"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="WGn-Y6-MAb"/>
+                                                <exclude reference="Wg0-Fs-CSu"/>
+                                            </mask>
+                                        </variation>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6QP-30-tTY">
+                                        <rect key="frame" x="210" y="92" width="13" height="1"/>
+                                        <color key="backgroundColor" red="0.70196078429999997" green="0.70196078429999997" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="13" id="Hs1-ED-12p"/>
+                                            <constraint firstAttribute="height" constant="1" id="Ini-1c-wxC"/>
+                                            <constraint firstAttribute="width" constant="12" id="R1C-aC-ubH"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="TIV-EQ-Pod"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="TIV-EQ-Pod"/>
+                                                <exclude reference="Hs1-ED-12p"/>
+                                            </mask>
+                                        </variation>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="100." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o4V-83-m4v">
+                                        <rect key="frame" x="208" y="92" width="15" height="12"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="19" id="4kf-zc-JMo"/>
+                                            <constraint firstAttribute="width" constant="15" id="7dQ-wg-Mkx"/>
+                                            <constraint firstAttribute="height" constant="12" id="Z0L-ZX-IAh"/>
+                                            <constraint firstAttribute="width" constant="24" id="r3P-Ar-wjW"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="BebasNeueRegular" family="Bebas Neue" pointSize="9"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="r3P-Ar-wjW"/>
+                                                <exclude reference="4kf-zc-JMo"/>
+                                            </mask>
+                                        </variation>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QOk-Bt-nw3">
+                                        <rect key="frame" x="231" y="52" width="2" height="51"/>
+                                        <color key="backgroundColor" red="0.70196078429999997" green="0.70196078429999997" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="51" id="Q8X-Uh-yfb"/>
+                                            <constraint firstAttribute="width" constant="2" id="UJK-nh-h7P"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="Q8X-Uh-yfb"/>
+                                            </mask>
+                                        </variation>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="WED" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qem-bL-3dQ">
+                                        <rect key="frame" x="241" y="52" width="33" height="26"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="33" id="cgW-j0-p56"/>
+                                            <constraint firstAttribute="height" constant="26" id="hvT-kI-NEd"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="BebasNeueRegular" family="Bebas Neue" pointSize="24"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="ThunderShowers" translatesAutoresizingMaskIntoConstraints="NO" id="Ao0-Kk-Iji">
+                                        <rect key="frame" x="241" y="78" width="25" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="YwM-fh-vZt"/>
+                                            <constraint firstAttribute="width" constant="25" id="d9n-vi-rdl"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="100." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kfZ-KI-7MC">
+                                        <rect key="frame" x="266" y="78" width="15" height="12"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="15" id="PvH-xk-dXx"/>
+                                            <constraint firstAttribute="height" constant="12" id="SCa-hf-3ip"/>
+                                            <constraint firstAttribute="height" constant="19" id="njn-4W-jhL"/>
+                                            <constraint firstAttribute="width" constant="24" id="pg3-Va-Gjr"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="BebasNeueRegular" family="Bebas Neue" pointSize="9"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="pg3-Va-Gjr"/>
+                                                <exclude reference="njn-4W-jhL"/>
+                                            </mask>
+                                        </variation>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jJi-cj-AN2">
+                                        <rect key="frame" x="268" y="91" width="13" height="1"/>
+                                        <color key="backgroundColor" red="0.70196078429999997" green="0.70196078429999997" blue="0.70196078429999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="13" id="0ap-HP-lqs"/>
+                                            <constraint firstAttribute="height" constant="1" id="0lV-c8-NRg"/>
+                                            <constraint firstAttribute="width" constant="12" id="N0U-Tl-guH"/>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="1" id="jBu-PI-EMS"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="jBu-PI-EMS"/>
+                                                <exclude reference="0ap-HP-lqs"/>
+                                            </mask>
+                                        </variation>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="100." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sEE-Bz-aLg">
+                                        <rect key="frame" x="266" y="92" width="15" height="12"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="12" id="Icc-qr-Ej2"/>
+                                            <constraint firstAttribute="width" constant="24" id="Q4I-qR-LrG"/>
+                                            <constraint firstAttribute="height" constant="19" id="QR5-m8-Tj1"/>
+                                            <constraint firstAttribute="width" constant="15" id="pNa-6U-DMR"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="BebasNeueRegular" family="Bebas Neue" pointSize="9"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="Q4I-qR-LrG"/>
+                                                <exclude reference="QR5-m8-Tj1"/>
+                                            </mask>
+                                        </variation>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="mc7-10-0ql" firstAttribute="top" secondItem="4Cw-ge-oV4" secondAttribute="top" constant="2" id="1Ma-UB-c7M"/>
+                                    <constraint firstItem="Ao0-Kk-Iji" firstAttribute="top" secondItem="qem-bL-3dQ" secondAttribute="bottom" constant="-3" id="1zU-eG-19I"/>
+                                    <constraint firstItem="kfZ-KI-7MC" firstAttribute="top" secondItem="qem-bL-3dQ" secondAttribute="bottom" constant="-3" id="28L-SU-mlw"/>
+                                    <constraint firstItem="Qna-ob-gb1" firstAttribute="top" secondItem="sdA-4S-Slw" secondAttribute="top" id="2Iy-l0-7ud"/>
+                                    <constraint firstItem="Dul-rm-BQp" firstAttribute="top" secondItem="mc7-10-0ql" secondAttribute="bottom" constant="-4" id="2kP-eD-TsB"/>
+                                    <constraint firstItem="ZSh-aD-wDN" firstAttribute="bottom" secondItem="OEC-FL-MhU" secondAttribute="bottom" id="2xR-sE-kgA"/>
+                                    <constraint firstItem="kpl-Bv-fRq" firstAttribute="leading" secondItem="Cnz-Ig-b3k" secondAttribute="leading" constant="-3" id="3Mr-Eh-FtT"/>
+                                    <constraint firstItem="kpl-Bv-fRq" firstAttribute="bottom" secondItem="gQy-hD-HYA" secondAttribute="bottom" id="44e-L3-mH4"/>
+                                    <constraint firstItem="0Yb-jY-tQZ" firstAttribute="leading" secondItem="PT2-ON-Dyt" secondAttribute="trailing" id="5PW-Yo-l39"/>
+                                    <constraint firstItem="Bx8-3W-qwk" firstAttribute="leading" secondItem="kpl-Bv-fRq" secondAttribute="trailing" constant="-1" id="5aM-PA-ww4"/>
+                                    <constraint firstItem="jJi-cj-AN2" firstAttribute="top" secondItem="kfZ-KI-7MC" secondAttribute="bottom" constant="-2" id="5hB-Ri-yHH"/>
+                                    <constraint firstItem="hpt-PJ-4R3" firstAttribute="leading" secondItem="m4S-oh-YZd" secondAttribute="leading" id="6C9-YQ-dyt"/>
+                                    <constraint firstItem="bcN-zt-128" firstAttribute="leading" secondItem="vn9-bd-42d" secondAttribute="trailing" constant="-1" id="6G0-EB-za1"/>
+                                    <constraint firstItem="m4S-oh-YZd" firstAttribute="leading" secondItem="yVW-YC-nBj" secondAttribute="trailing" constant="-1" id="7Jm-ij-M1Y"/>
+                                    <constraint firstItem="sdA-4S-Slw" firstAttribute="top" secondItem="PT2-ON-Dyt" secondAttribute="top" id="8MZ-sZ-ubI"/>
+                                    <constraint firstItem="PT2-ON-Dyt" firstAttribute="top" secondItem="4Cw-ge-oV4" secondAttribute="top" constant="2" id="928-v1-kbP"/>
+                                    <constraint firstItem="EN2-EU-OPA" firstAttribute="top" secondItem="duj-bi-Li8" secondAttribute="top" id="95z-bu-rLJ"/>
+                                    <constraint firstItem="QOk-Bt-nw3" firstAttribute="leading" secondItem="o4V-83-m4v" secondAttribute="trailing" constant="13" id="9UN-fu-5E0"/>
+                                    <constraint firstItem="veR-I1-bCS" firstAttribute="leading" secondItem="bRp-lO-qcz" secondAttribute="trailing" constant="8" id="AFl-AH-3CN"/>
+                                    <constraint firstItem="kUz-sm-giq" firstAttribute="leading" secondItem="0Yb-jY-tQZ" secondAttribute="leading" id="Aku-kh-Hkl"/>
+                                    <constraint firstItem="gQy-hD-HYA" firstAttribute="top" secondItem="Cnz-Ig-b3k" secondAttribute="top" id="At5-TB-gu1"/>
+                                    <constraint firstItem="ixJ-g3-Fwf" firstAttribute="top" secondItem="Bx8-3W-qwk" secondAttribute="bottom" constant="-2" id="Bvf-Fo-AOu"/>
+                                    <constraint firstItem="sEE-Bz-aLg" firstAttribute="leading" secondItem="kfZ-KI-7MC" secondAttribute="leading" id="DFk-Ki-xoW"/>
+                                    <constraint firstItem="Wsh-Cf-FDk" firstAttribute="top" secondItem="0Yb-jY-tQZ" secondAttribute="bottom" constant="4" id="DuM-sk-aIC"/>
+                                    <constraint firstItem="6QP-30-tTY" firstAttribute="top" secondItem="bcN-zt-128" secondAttribute="bottom" constant="-2" id="EN5-0m-P9l"/>
+                                    <constraint firstItem="bRI-L0-OLS" firstAttribute="leading" secondItem="Fm4-pQ-qe2" secondAttribute="leading" id="Edp-8k-0Fb"/>
+                                    <constraint firstItem="gQy-hD-HYA" firstAttribute="leading" secondItem="ixJ-g3-Fwf" secondAttribute="trailing" constant="13" id="FFL-dG-i75"/>
+                                    <constraint firstItem="6QP-30-tTY" firstAttribute="leading" secondItem="bcN-zt-128" secondAttribute="leading" constant="2" id="FM7-Mz-sR7"/>
+                                    <constraint firstItem="bRp-lO-qcz" firstAttribute="leading" secondItem="Qna-ob-gb1" secondAttribute="trailing" constant="-12" id="FmD-ne-MfF"/>
+                                    <constraint firstItem="ApJ-BU-KkV" firstAttribute="bottom" secondItem="yVW-YC-nBj" secondAttribute="bottom" id="GAP-ex-CkL"/>
+                                    <constraint firstItem="sEE-Bz-aLg" firstAttribute="top" secondItem="jJi-cj-AN2" secondAttribute="bottom" constant="-1" id="GIg-Aw-d61"/>
+                                    <constraint firstItem="OyY-KW-i2I" firstAttribute="centerY" secondItem="0Yb-jY-tQZ" secondAttribute="centerY" id="GKe-ED-Avn"/>
+                                    <constraint firstItem="jJi-cj-AN2" firstAttribute="leading" secondItem="kfZ-KI-7MC" secondAttribute="leading" constant="2" id="Gfx-Ib-lF2"/>
+                                    <constraint firstItem="kUz-sm-giq" firstAttribute="leading" secondItem="FCD-Ld-e2h" secondAttribute="leading" constant="3" id="Hkm-U3-MQh"/>
+                                    <constraint firstItem="veR-I1-bCS" firstAttribute="top" secondItem="Qna-ob-gb1" secondAttribute="top" id="I3i-La-wS8"/>
+                                    <constraint firstItem="hhY-yb-1nH" firstAttribute="top" secondItem="Bx8-3W-qwk" secondAttribute="bottom" constant="-2" id="LKu-vs-eLn"/>
+                                    <constraint firstItem="m4S-oh-YZd" firstAttribute="leading" secondItem="yVW-YC-nBj" secondAttribute="trailing" constant="-1" id="LUA-M6-jXq"/>
+                                    <constraint firstItem="o4V-83-m4v" firstAttribute="leading" secondItem="bcN-zt-128" secondAttribute="leading" id="NFu-6g-brv"/>
+                                    <constraint firstItem="sdA-4S-Slw" firstAttribute="leading" secondItem="0Yb-jY-tQZ" secondAttribute="trailing" constant="14" id="NuP-Ma-Sw6"/>
+                                    <constraint firstItem="bRp-lO-qcz" firstAttribute="centerY" secondItem="OyY-KW-i2I" secondAttribute="centerY" constant="1" id="OoV-Tw-66d"/>
+                                    <constraint firstItem="qem-bL-3dQ" firstAttribute="top" secondItem="xbN-pR-h6o" secondAttribute="top" id="Q10-mJ-5Sg"/>
+                                    <constraint firstItem="o4V-83-m4v" firstAttribute="top" secondItem="6QP-30-tTY" secondAttribute="bottom" constant="-1" id="Q19-o5-XAe"/>
+                                    <constraint firstAttribute="height" constant="105" id="Q8F-Ni-7Ie"/>
+                                    <constraint firstItem="Fm4-pQ-qe2" firstAttribute="leading" secondItem="OEC-FL-MhU" secondAttribute="trailing" constant="-1" id="QIj-a7-IPb"/>
+                                    <constraint firstItem="hpt-PJ-4R3" firstAttribute="top" secondItem="Lnc-jh-QJz" secondAttribute="bottom" constant="-1" id="QTI-En-aUR"/>
+                                    <constraint firstItem="kUz-sm-giq" firstAttribute="top" secondItem="FCD-Ld-e2h" secondAttribute="bottom" constant="-2" id="RnW-JB-jTl"/>
+                                    <constraint firstItem="Is7-so-oCH" firstAttribute="leading" secondItem="Fm4-pQ-qe2" secondAttribute="leading" constant="2" id="SaK-3M-lGI"/>
+                                    <constraint firstItem="EN2-EU-OPA" firstAttribute="leading" secondItem="ZSh-aD-wDN" secondAttribute="trailing" constant="13" id="THx-AY-48R"/>
+                                    <constraint firstItem="mc7-10-0ql" firstAttribute="leading" secondItem="4Cw-ge-oV4" secondAttribute="leading" constant="12" id="TuR-1y-8Bc"/>
+                                    <constraint firstItem="kpl-Bv-fRq" firstAttribute="top" secondItem="Cnz-Ig-b3k" secondAttribute="bottom" constant="-3" id="UZb-LJ-xGe"/>
+                                    <constraint firstItem="0Yb-jY-tQZ" firstAttribute="leading" secondItem="FCD-Ld-e2h" secondAttribute="leading" id="Vgx-pm-Nvw"/>
+                                    <constraint firstItem="Lnc-jh-QJz" firstAttribute="leading" secondItem="m4S-oh-YZd" secondAttribute="leading" constant="2" id="XNK-lg-Tyw"/>
+                                    <constraint firstItem="bRI-L0-OLS" firstAttribute="top" secondItem="Is7-so-oCH" secondAttribute="bottom" constant="-1" id="XRl-qH-zjP"/>
+                                    <constraint firstItem="qem-bL-3dQ" firstAttribute="leading" secondItem="QOk-Bt-nw3" secondAttribute="trailing" constant="13" id="XVZ-hi-vGH"/>
+                                    <constraint firstItem="OEC-FL-MhU" firstAttribute="leading" secondItem="duj-bi-Li8" secondAttribute="leading" constant="-3" id="Xrz-UR-Mgc"/>
+                                    <constraint firstItem="Ao0-Kk-Iji" firstAttribute="leading" secondItem="qem-bL-3dQ" secondAttribute="leading" constant="-3" id="Xxb-Rc-YdE"/>
+                                    <constraint firstItem="kfZ-KI-7MC" firstAttribute="leading" secondItem="Ao0-Kk-Iji" secondAttribute="trailing" constant="-1" id="ZQI-jx-ro1"/>
+                                    <constraint firstItem="duj-bi-Li8" firstAttribute="top" secondItem="Cnz-Ig-b3k" secondAttribute="top" id="bKI-Of-qXS"/>
+                                    <constraint firstItem="duj-bi-Li8" firstAttribute="top" secondItem="Wsh-Cf-FDk" secondAttribute="bottom" id="bZI-gd-WC6"/>
+                                    <constraint firstItem="hhY-yb-1nH" firstAttribute="leading" secondItem="Bx8-3W-qwk" secondAttribute="leading" constant="2" id="bbC-Yr-dAa"/>
+                                    <constraint firstItem="FCD-Ld-e2h" firstAttribute="centerY" secondItem="mc7-10-0ql" secondAttribute="centerY" id="bzT-L2-PTE"/>
+                                    <constraint firstItem="yVW-YC-nBj" firstAttribute="top" secondItem="EN2-EU-OPA" secondAttribute="bottom" constant="-3" id="ch1-3e-0Kt"/>
+                                    <constraint firstItem="Dul-rm-BQp" firstAttribute="centerX" secondItem="mc7-10-0ql" secondAttribute="centerX" id="clk-eq-sJs"/>
+                                    <constraint firstItem="Fm4-pQ-qe2" firstAttribute="top" secondItem="duj-bi-Li8" secondAttribute="bottom" constant="-3" id="cmW-a4-Fag"/>
+                                    <constraint firstItem="QOk-Bt-nw3" firstAttribute="bottom" secondItem="vn9-bd-42d" secondAttribute="bottom" id="cvz-zq-hWS"/>
+                                    <constraint firstItem="Is7-so-oCH" firstAttribute="top" secondItem="Fm4-pQ-qe2" secondAttribute="bottom" constant="-2" id="dIn-Ku-at8"/>
+                                    <constraint firstItem="vn9-bd-42d" firstAttribute="leading" secondItem="xbN-pR-h6o" secondAttribute="leading" constant="-3" id="dnj-CU-Bid"/>
+                                    <constraint firstItem="PT2-ON-Dyt" firstAttribute="leading" secondItem="Dul-rm-BQp" secondAttribute="trailing" constant="8" id="dvS-s9-f9y"/>
+                                    <constraint firstItem="xbN-pR-h6o" firstAttribute="leading" secondItem="ApJ-BU-KkV" secondAttribute="trailing" constant="13" id="eQS-5z-9sU"/>
+                                    <constraint firstItem="ZSh-aD-wDN" firstAttribute="leading" secondItem="bRI-L0-OLS" secondAttribute="trailing" constant="13" id="ecE-vb-7qQ"/>
+                                    <constraint firstItem="Qna-ob-gb1" firstAttribute="leading" secondItem="OyY-KW-i2I" secondAttribute="trailing" constant="10" id="ey0-KL-d7G"/>
+                                    <constraint firstItem="QOk-Bt-nw3" firstAttribute="top" secondItem="xbN-pR-h6o" secondAttribute="top" id="f6F-Om-Ew1"/>
+                                    <constraint firstItem="ZSh-aD-wDN" firstAttribute="top" secondItem="duj-bi-Li8" secondAttribute="top" id="fO7-9l-dim"/>
+                                    <constraint firstItem="Dul-rm-BQp" firstAttribute="leading" secondItem="4Cw-ge-oV4" secondAttribute="leading" id="giW-vh-FAB"/>
+                                    <constraint firstItem="Cnz-Ig-b3k" firstAttribute="top" secondItem="Wsh-Cf-FDk" secondAttribute="bottom" constant="4" id="hm4-dF-fA3"/>
+                                    <constraint firstItem="bcN-zt-128" firstAttribute="top" secondItem="xbN-pR-h6o" secondAttribute="bottom" constant="-3" id="hnJ-zS-rxt"/>
+                                    <constraint firstItem="OyY-KW-i2I" firstAttribute="leading" secondItem="sdA-4S-Slw" secondAttribute="trailing" constant="-1" id="jkr-fB-6za"/>
+                                    <constraint firstItem="FCD-Ld-e2h" firstAttribute="leading" secondItem="PT2-ON-Dyt" secondAttribute="trailing" constant="-8" id="k6q-yY-e6j"/>
+                                    <constraint firstAttribute="trailing" secondItem="Wsh-Cf-FDk" secondAttribute="trailing" id="kF0-ER-pK2"/>
+                                    <constraint firstItem="Wsh-Cf-FDk" firstAttribute="leading" secondItem="4Cw-ge-oV4" secondAttribute="leading" id="kvb-bj-U3w"/>
+                                    <constraint firstItem="Dul-rm-BQp" firstAttribute="top" secondItem="4Cw-ge-oV4" secondAttribute="top" id="kwU-BU-b84"/>
+                                    <constraint firstItem="0Yb-jY-tQZ" firstAttribute="centerY" secondItem="Dul-rm-BQp" secondAttribute="centerY" id="mFb-kT-Fnp"/>
+                                    <constraint firstItem="Bx8-3W-qwk" firstAttribute="top" secondItem="Cnz-Ig-b3k" secondAttribute="bottom" constant="-3" id="mbJ-g8-Dgp"/>
+                                    <constraint firstItem="ApJ-BU-KkV" firstAttribute="top" secondItem="EN2-EU-OPA" secondAttribute="top" id="ni4-sU-I2B"/>
+                                    <constraint firstItem="vn9-bd-42d" firstAttribute="top" secondItem="xbN-pR-h6o" secondAttribute="bottom" constant="-3" id="ohp-ss-FHp"/>
+                                    <constraint firstItem="ApJ-BU-KkV" firstAttribute="leading" secondItem="hpt-PJ-4R3" secondAttribute="trailing" constant="12" id="olI-iO-tqb"/>
+                                    <constraint firstItem="yVW-YC-nBj" firstAttribute="leading" secondItem="EN2-EU-OPA" secondAttribute="leading" constant="-3" id="p6u-Km-dHG"/>
+                                    <constraint firstItem="ixJ-g3-Fwf" firstAttribute="leading" secondItem="kpl-Bv-fRq" secondAttribute="trailing" constant="-1" id="p9s-d9-aeQ"/>
+                                    <constraint firstItem="OEC-FL-MhU" firstAttribute="top" secondItem="duj-bi-Li8" secondAttribute="bottom" constant="-3" id="pgo-8w-K54"/>
+                                    <constraint firstItem="Lnc-jh-QJz" firstAttribute="top" secondItem="m4S-oh-YZd" secondAttribute="bottom" constant="-2" id="qwA-9f-VAV"/>
+                                    <constraint firstItem="xbN-pR-h6o" firstAttribute="top" secondItem="EN2-EU-OPA" secondAttribute="top" id="uQb-TF-z3s"/>
+                                    <constraint firstAttribute="width" constant="326" id="uwh-EP-qlJ"/>
+                                    <constraint firstItem="duj-bi-Li8" firstAttribute="leading" secondItem="gQy-hD-HYA" secondAttribute="trailing" constant="13" id="vzu-6X-7cc"/>
+                                    <constraint firstItem="Cnz-Ig-b3k" firstAttribute="leading" secondItem="Dul-rm-BQp" secondAttribute="leading" constant="3" id="xQ4-do-en3"/>
+                                    <constraint firstItem="m4S-oh-YZd" firstAttribute="top" secondItem="EN2-EU-OPA" secondAttribute="bottom" constant="-3" id="yf9-ea-4hC"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="giW-vh-FAB"/>
+                                        <exclude reference="kwU-BU-b84"/>
+                                        <exclude reference="bZI-gd-WC6"/>
+                                        <exclude reference="Aku-kh-Hkl"/>
+                                    </mask>
+                                </variation>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="DTa-iK-oBn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="9ey-yq-uCH"/>
+                            <constraint firstItem="4Cw-ge-oV4" firstAttribute="top" secondItem="ejm-b0-LDd" secondAttribute="bottom" constant="8" id="AH1-Eb-EAr"/>
+                            <constraint firstItem="dI8-Ir-tJG" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-10" id="FQx-q5-3Yn"/>
+                            <constraint firstItem="5sj-x4-M1j" firstAttribute="top" secondItem="DTa-iK-oBn" secondAttribute="bottom" constant="8" id="GEj-wE-WTa"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="4Cw-ge-oV4" secondAttribute="trailing" id="O3Y-9u-0PG"/>
+                            <constraint firstItem="DTa-iK-oBn" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="QcV-Pf-78a"/>
+                            <constraint firstItem="dI8-Ir-tJG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="S5F-Gi-e2g"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="4Cw-ge-oV4" secondAttribute="bottom" id="T4K-Ad-jIk"/>
+                            <constraint firstItem="5sj-x4-M1j" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fxa-b8-Zv1"/>
+                            <constraint firstItem="ejm-b0-LDd" firstAttribute="top" secondItem="5sj-x4-M1j" secondAttribute="bottom" constant="-30" id="oJJ-Dx-1Gx"/>
+                            <constraint firstItem="DTa-iK-oBn" firstAttribute="top" secondItem="dI8-Ir-tJG" secondAttribute="bottom" constant="-5" id="tXo-bH-WPi"/>
+                            <constraint firstItem="ejm-b0-LDd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="uHW-J0-cxp"/>
+                            <constraint firstItem="4Cw-ge-oV4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="vR3-i6-nUS"/>
+                            <constraint firstItem="4Cw-ge-oV4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="wDD-ne-uSH"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="oJJ-Dx-1Gx"/>
+                                <exclude reference="O3Y-9u-0PG"/>
+                                <exclude reference="vR3-i6-nUS"/>
+                            </mask>
+                        </variation>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -276,7 +806,6 @@
     </scenes>
     <resources>
         <image name="Location" width="200" height="200"/>
-        <image name="MostlySunny" width="200" height="200"/>
         <image name="SmallWind" width="200" height="200"/>
         <image name="SunRiseSet" width="200" height="200"/>
         <image name="ThermometerF" width="200" height="200"/>
