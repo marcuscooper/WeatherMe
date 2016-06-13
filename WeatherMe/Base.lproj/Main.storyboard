@@ -808,8 +808,8 @@
                         <outlet property="currentTimeLbl" destination="mc7-10-0ql" id="3Gr-Jr-1TZ"/>
                         <outlet property="currentWeatherImg" destination="5sj-x4-M1j" id="pDT-Sl-1r6"/>
                         <outlet property="dayFiveDayLbl" destination="qem-bL-3dQ" id="prY-SR-d05"/>
-                        <outlet property="dayFiveHighTempImg" destination="kfZ-KI-7MC" id="8bb-SA-2xm"/>
-                        <outlet property="dayFiveLowTempImg" destination="sEE-Bz-aLg" id="2rj-Xl-QNi"/>
+                        <outlet property="dayFiveHighTempLbl" destination="kfZ-KI-7MC" id="qMS-Rg-6qc"/>
+                        <outlet property="dayFiveLowTempLbl" destination="sEE-Bz-aLg" id="wP3-mf-H3a"/>
                         <outlet property="dayFiveWeatherImg" destination="Ao0-Kk-Iji" id="GuG-Gx-S5y"/>
                         <outlet property="dayFourDayLbl" destination="xbN-pR-h6o" id="66h-Ip-6CJ"/>
                         <outlet property="dayFourHighTempLbl" destination="bcN-zt-128" id="yCV-na-zRj"/>
