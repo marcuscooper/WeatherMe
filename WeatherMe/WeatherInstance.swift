@@ -54,6 +54,9 @@ class WeatherInstance {
     private var _fifthHighTemp: String!
     private var _fifthLowTemp: String!
     
+    private var _sunrise: String!
+    private var _sunset: String!
+    
     var cityName: String {
         return _cityName
     }
@@ -142,6 +145,14 @@ class WeatherInstance {
         return _fifthLowTemp
     }
     
+    var sunrise: String {
+        return _sunrise
+    }
+    
+    var sunset: String {
+        return _sunset
+    }
+    
     let degree = "\u{00B0}" // degree symbol
 
     init(cityName: String) {
@@ -218,6 +229,17 @@ class WeatherInstance {
                     
                     if let humidity = mainDict["humidity"] {
                         self._humidity = ("\(Int(round(humidity)))\(self.degree)")
+                    }
+                }
+                
+                if let sysDict = dict["sys"] as? Dictionary<String, AnyObject>
+                {
+                    if let sunriseInt = sysDict["sunrise"] as? Double {
+                        self._sunrise = self.getTimeString(sunriseInt)
+                    }
+                    
+                    if let sunsetInt = sysDict["sunset"] as? Double {
+                        self._sunset = self.getTimeString(sunsetInt)
                     }
                 }
                 
@@ -445,5 +467,13 @@ class WeatherInstance {
                 }
             }
         }
+    }
+    
+    func getTimeString(time: Double) -> String {
+        let date = NSDate(timeIntervalSince1970: time)
+        
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "hh:mm a"
+        return dateFormatter.stringFromDate(date)
     }
 }

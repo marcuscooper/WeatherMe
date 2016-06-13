@@ -46,6 +46,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var dayFiveHighTempLbl: UILabel!
     @IBOutlet weak var dayFiveLowTempLbl: UILabel!
     
+    @IBOutlet weak var sunSetRiseView: UIView!
+    @IBOutlet weak var sunriseTimeLbl: UILabel!
+    @IBOutlet weak var sunsetTimeLbl: UILabel!
+    
     var cityName: String!
     var weatherInstance: WeatherInstance!
     var currentDate: String!
@@ -97,6 +101,8 @@ class ViewController: UIViewController {
         todayLowTempLbl.text = weatherInstance.lowTemp
         windSpeedLbl.text = weatherInstance.windSpeed
         humidityLbl.text = weatherInstance.humidity
+        sunriseTimeLbl.text = weatherInstance.sunrise
+        sunsetTimeLbl.text = weatherInstance.sunset
     }
     
     func updateBottomUI() {
@@ -119,10 +125,6 @@ class ViewController: UIViewController {
         dayFiveWeatherImg.image = UIImage(named: weatherInstance.fifthWeatherType.rawValue)
         dayFiveLowTempLbl.text = weatherInstance.fifthLowTemp
         dayFiveHighTempLbl.text = weatherInstance.fifthHighTemp
-}
-    
-    @IBAction func didPressSunRiseSetBtn(sender: AnyObject) {
-        
     }
     
     func getDayOfWeekString(today:String)->String? {
@@ -161,55 +163,68 @@ class ViewController: UIViewController {
         print(getDayOfWeekString(currentDate))
         
         switch getDayOfWeekString(currentDate)! {
-            case "Sunday":
-                dayPlusOne = "MON"
-                dayPlusTwo = "TUE"
-                dayPlusThree = "WED"
-                dayPlusFour = "THU"
-                dayPlusFive = "FRI"
-            case "Monday":
-                dayPlusOne = "TUE"
-                dayPlusTwo = "WED"
-                dayPlusThree = "ThU"
-                dayPlusFour = "FRI"
-                dayPlusFive = "SAT"
-            case "Tuesday":
-                dayPlusOne = "WED"
-                dayPlusTwo = "THU"
-                dayPlusThree = "FRI"
-                dayPlusFour = "SAT"
-                dayPlusFive = "SUN"
-            case "Wednesday":
-                dayPlusOne = "THU"
-                dayPlusTwo = "FRI"
-                dayPlusThree = "SAT"
-                dayPlusFour = "SUN"
-                dayPlusFive = "MON"
-            case "Thursday":
-                dayPlusOne = "FRI"
-                dayPlusTwo = "SAT"
-                dayPlusThree = "SUN"
-                dayPlusFour = "MON"
-                dayPlusFive = "TUE"
-            case "Friday":
-                dayPlusOne = "SAT"
-                dayPlusTwo = "SUN"
-                dayPlusThree = "MON"
-                dayPlusFour = "TUE"
-                dayPlusFive = "WED"
-            case "Saturday":
-                dayPlusOne = "SUN"
-                dayPlusTwo = "MON"
-                dayPlusThree = "TUE"
-                dayPlusFour = "WED"
-                dayPlusFive = "THU"
-            default:
-                dayPlusOne = ""
-                dayPlusTwo = ""
-                dayPlusThree = ""
-                dayPlusFour = ""
-                dayPlusFive = ""
+        case "Sunday":
+            dayPlusOne = "MON"
+            dayPlusTwo = "TUE"
+            dayPlusThree = "WED"
+            dayPlusFour = "THU"
+            dayPlusFive = "FRI"
+        case "Monday":
+            dayPlusOne = "TUE"
+            dayPlusTwo = "WED"
+            dayPlusThree = "ThU"
+            dayPlusFour = "FRI"
+            dayPlusFive = "SAT"
+        case "Tuesday":
+            dayPlusOne = "WED"
+            dayPlusTwo = "THU"
+            dayPlusThree = "FRI"
+            dayPlusFour = "SAT"
+            dayPlusFive = "SUN"
+        case "Wednesday":
+            dayPlusOne = "THU"
+            dayPlusTwo = "FRI"
+            dayPlusThree = "SAT"
+            dayPlusFour = "SUN"
+            dayPlusFive = "MON"
+        case "Thursday":
+            dayPlusOne = "FRI"
+            dayPlusTwo = "SAT"
+            dayPlusThree = "SUN"
+            dayPlusFour = "MON"
+            dayPlusFive = "TUE"
+        case "Friday":
+            dayPlusOne = "SAT"
+            dayPlusTwo = "SUN"
+            dayPlusThree = "MON"
+            dayPlusFour = "TUE"
+            dayPlusFive = "WED"
+        case "Saturday":
+            dayPlusOne = "SUN"
+            dayPlusTwo = "MON"
+            dayPlusThree = "TUE"
+            dayPlusFour = "WED"
+            dayPlusFive = "THU"
+        default:
+            dayPlusOne = ""
+            dayPlusTwo = ""
+            dayPlusThree = ""
+            dayPlusFour = ""
+            dayPlusFive = ""
         }
+    }
+
+    @IBAction func didPressSunRiseSetBtn(sender: AnyObject) {
+        if sunSetRiseView.hidden {
+            sunSetRiseView.hidden = false
+        } else {
+            sunSetRiseView.hidden = true
+        }
+    }
+    
+
+    @IBAction func closeSunSetRiseBtnTapped(sender: AnyObject) {
+        sunSetRiseView.hidden = true
     }
 }
 
