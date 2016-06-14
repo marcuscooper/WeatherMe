@@ -47,6 +47,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" alpha="0.34999999999999998" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SkyRain" translatesAutoresizingMaskIntoConstraints="NO" id="d0o-1i-kE2">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Location" translatesAutoresizingMaskIntoConstraints="NO" id="dI8-Ir-tJG">
                                 <rect key="frame" x="275" y="10" width="51" height="49"/>
                                 <constraints>
@@ -80,7 +83,7 @@
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="100." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ejm-b0-LDd">
                                 <rect key="frame" x="242" y="336" width="116" height="88"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.81406250000000002" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="88" id="a1V-Jp-ZEX"/>
                                     <constraint firstAttribute="width" constant="116" id="xxj-K3-lSj"/>
@@ -818,7 +821,7 @@
                                         </variation>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="mc7-10-0ql" firstAttribute="top" secondItem="4Cw-ge-oV4" secondAttribute="top" constant="2" id="1Ma-UB-c7M"/>
                                     <constraint firstItem="Ao0-Kk-Iji" firstAttribute="top" secondItem="qem-bL-3dQ" secondAttribute="bottom" constant="-3" id="1zU-eG-19I"/>
@@ -935,6 +938,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="wEU-yW-G8G" firstAttribute="leading" secondItem="dI8-Ir-tJG" secondAttribute="leading" id="2gv-ZH-4GY"/>
+                            <constraint firstItem="d0o-1i-kE2" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="4El-Tb-1wb"/>
                             <constraint firstItem="wEU-yW-G8G" firstAttribute="top" secondItem="dI8-Ir-tJG" secondAttribute="top" id="5Hw-Tc-TEb"/>
                             <constraint firstItem="DTa-iK-oBn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="9ey-yq-uCH"/>
                             <constraint firstItem="4Cw-ge-oV4" firstAttribute="top" secondItem="ejm-b0-LDd" secondAttribute="bottom" priority="750" constant="8" id="AH1-Eb-EAr"/>
@@ -949,8 +953,11 @@
                             <constraint firstItem="DTa-iK-oBn" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="QcV-Pf-78a"/>
                             <constraint firstItem="zvA-8T-2aD" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" constant="105" id="Qip-ZB-VOP"/>
                             <constraint firstItem="dI8-Ir-tJG" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="S5F-Gi-e2g"/>
+                            <constraint firstItem="d0o-1i-kE2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="SRB-Hi-Ssr"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="d0o-1i-kE2" secondAttribute="bottom" id="Sob-hY-gBy"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="4Cw-ge-oV4" secondAttribute="bottom" id="T4K-Ad-jIk"/>
                             <constraint firstItem="zvA-8T-2aD" firstAttribute="top" secondItem="6Mz-0E-XMV" secondAttribute="bottom" constant="20" id="TTX-XF-mi6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="d0o-1i-kE2" secondAttribute="trailing" constant="-20" id="XPd-FP-qkp"/>
                             <constraint firstItem="5sj-x4-M1j" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="fxa-b8-Zv1"/>
                             <constraint firstItem="DTa-iK-oBn" firstAttribute="leading" secondItem="6Mz-0E-XMV" secondAttribute="leading" id="iPv-CB-tbq"/>
                             <constraint firstItem="wEU-yW-G8G" firstAttribute="trailing" secondItem="dI8-Ir-tJG" secondAttribute="trailing" id="ihu-gN-nzS"/>
@@ -976,6 +983,7 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="backgroundImg" destination="d0o-1i-kE2" id="THL-cy-zUr"/>
                         <outlet property="cityNameLbl" destination="DTa-iK-oBn" id="cgu-9k-vTL"/>
                         <outlet property="currentDayLbl" destination="Dul-rm-BQp" id="iXz-kb-4YT"/>
                         <outlet property="currentTempLbl" destination="ejm-b0-LDd" id="Q8T-Rj-AJQ"/>
@@ -1025,6 +1033,7 @@
         <image name="CloseX" width="200" height="200"/>
         <image name="Humidity" width="200" height="200"/>
         <image name="Location" width="200" height="200"/>
+        <image name="SkyRain" width="1750" height="649"/>
         <image name="SmallWind" width="200" height="200"/>
         <image name="SunRiseSet" width="200" height="200"/>
         <image name="Sunrise" width="200" height="200"/>

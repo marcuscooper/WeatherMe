@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController, UITextFieldDelegate {
 
+    @IBOutlet weak var backgroundImg: UIImageView!
     @IBOutlet weak var cityNameLbl: UILabel!
     @IBOutlet weak var currentWeatherImg: UIImageView!
     @IBOutlet weak var currentTempLbl: UILabel!
@@ -104,6 +105,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     func updateUI() {
         cityNameLbl.text = weatherInstance.cityName
         currentWeatherImg.image = UIImage(named: weatherInstance.weatherType.rawValue)
+        findCorrectBackgroundImg()
         currentTempLbl.text = weatherInstance.temp
         currentDayLbl.text = getDayOfWeekString()
         currentTimeLbl.text = currentTime
@@ -281,6 +283,29 @@ class ViewController: UIViewController, UITextFieldDelegate {
         populateData()
 
         return false
+    }
+    
+    func findCorrectBackgroundImg() {
+        switch weatherInstance.weatherType {
+            case WeatherInstance.weatherTypeEnum.ClearDay:
+                backgroundImg.image = UIImage(named: "SkyClear.png")
+        case WeatherInstance.weatherTypeEnum.Cloudy:
+            backgroundImg.image = UIImage(named: "SkyCloudy.png")
+        case WeatherInstance.weatherTypeEnum.Hail:
+            backgroundImg.image = UIImage(named: "SkyHail.png")
+        case WeatherInstance.weatherTypeEnum.Rain:
+            backgroundImg.image = UIImage(named: "SkyRain.png")
+        case WeatherInstance.weatherTypeEnum.Sleet:
+            backgroundImg.image = UIImage(named: "SkySleet.png")
+        case WeatherInstance.weatherTypeEnum.Snow:
+            backgroundImg.image = UIImage(named: "SkySnow.png")
+        case WeatherInstance.weatherTypeEnum.ThunderShowers:
+            backgroundImg.image = UIImage(named: "SkyLightning.png")
+        case WeatherInstance.weatherTypeEnum.Wind:
+            backgroundImg.image = UIImage(named: "SkyWindy.png")
+            default:
+                backgroundImg.image = UIImage(named: "")
+        }
     }
 }
 
