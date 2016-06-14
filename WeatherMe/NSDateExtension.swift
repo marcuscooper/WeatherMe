@@ -63,4 +63,24 @@ extension NSDate {
         //Return Result
         return dateWithHoursAdded
     }
+
+    func getDayOfWeekString()->String? {
+        let myCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
+        let myComponents = myCalendar?.components(.Weekday, fromDate: self)
+        let weekDay = (myComponents?.weekday)! - 1
+        
+        let weekdayArray = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"]
+        return weekdayArray[weekDay]
+    }
+    
+    func getNextFiveWeekdays() -> [String]? {
+        let myCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
+        let myComponents = myCalendar?.components(.Weekday, fromDate: self)
+        let weekDay = (myComponents?.weekday)!
+        
+        let weekdayArray = ["SUN","MON","TUE","WED","THU","FRI","SAT"]
+        let dayArray = [weekdayArray[(weekDay) % 7], weekdayArray[(weekDay + 1) % 7], weekdayArray[(weekDay + 2) % 7], weekdayArray[(weekDay + 3) % 7], weekdayArray[(weekDay + 4) % 7]]
+        
+        return dayArray
+    }
 }
