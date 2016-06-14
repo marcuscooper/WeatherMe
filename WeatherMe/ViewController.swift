@@ -52,7 +52,6 @@ class ViewController: UIViewController {
     
     var cityName: String!
     var weatherInstance: WeatherInstance!
-    var currentDate: String!
     var currentTime: String!
     var dayPlusOne: String!
     var dayPlusTwo: String!
@@ -62,16 +61,15 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        cityName = "28173"
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        cityName = "Charlotte"
         weatherInstance = WeatherInstance.init(cityName: cityName)
         
         let timeStyler = NSDateFormatter()
         timeStyler.timeStyle = NSDateFormatterStyle.ShortStyle
         currentTime = timeStyler.stringFromDate(NSDate())
-        
-        let dateStyler = NSDateFormatter()
-        dateStyler.dateStyle = NSDateFormatterStyle.ShortStyle
-        currentDate = dateStyler.stringFromDate(NSDate())
         
         getNextFiveWeekdays()
         dayOneDayLbl.text = dayPlusOne
@@ -95,10 +93,8 @@ class ViewController: UIViewController {
         cityNameLbl.text = weatherInstance.cityName
         currentWeatherImg.image = UIImage(named: weatherInstance.weatherType.rawValue)
         currentTempLbl.text = weatherInstance.temp
-        currentDayLbl.text = getDayOfWeekString(currentDate)
+        currentDayLbl.text = getDayOfWeekString()
         currentTimeLbl.text = currentTime
-        todayHighTempLbl.text = weatherInstance.highTemp
-        todayLowTempLbl.text = weatherInstance.lowTemp
         windSpeedLbl.text = weatherInstance.windSpeed
         humidityLbl.text = weatherInstance.humidity
         sunriseTimeLbl.text = weatherInstance.sunrise
@@ -106,6 +102,9 @@ class ViewController: UIViewController {
     }
     
     func updateBottomUI() {
+        todayHighTempLbl.text = weatherInstance.highTemp
+        todayLowTempLbl.text = weatherInstance.lowTemp
+
         dayOneWeatherImg.image = UIImage(named: weatherInstance.firstWeatherType.rawValue)
         dayOneLowTempLbl.text = weatherInstance.firstLowTemp
         dayOneHighTempLbl.text = weatherInstance.firstHighTemp
@@ -127,42 +126,36 @@ class ViewController: UIViewController {
         dayFiveHighTempLbl.text = weatherInstance.fifthHighTemp
     }
     
-    func getDayOfWeekString(today:String)->String? {
-        let formatter  = NSDateFormatter()
-        formatter.dateFormat = "M/dd/YY"
-        if let todayDate = formatter.dateFromString(today) {
-            let myCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
-            let myComponents = myCalendar.components(.Weekday, fromDate: todayDate)
-            let weekDay = myComponents.weekday
-            switch weekDay {
+    func getDayOfWeekString()->String? {
+        let todayDate = NSDate()
+        let myCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)
+        let myComponents = myCalendar?.components(.Weekday, fromDate: todayDate)
+        let weekDay = myComponents?.weekday
+
+        switch weekDay! {
             case 1:
                 return "Sunday"
             case 2:
                 return "Monday"
             case 3:
-                return "Tueday"
+                return "Tuesday"
             case 4:
-                return "Wedday"
+                return "Wednesday"
             case 5:
-                return "Thuday"
+                return "Thursday"
             case 6:
                 return "Friday"
             case 7:
-                return "Satday"
+                return "Saturday"
             default:
                 print("Error fetching days")
                 return "Day"
             }
-        } else {
-            return nil
-        }
     }
     
     func getNextFiveWeekdays() {
-        print(currentDate)
-        print(getDayOfWeekString(currentDate))
-        
-        switch getDayOfWeekString(currentDate)! {
+        let todayDay = getDayOfWeekString()!
+        switch todayDay {
         case "Sunday":
             dayPlusOne = "MON"
             dayPlusTwo = "TUE"

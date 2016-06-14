@@ -154,6 +154,7 @@ class WeatherInstance {
     }
     
     let degree = "\u{00B0}" // degree symbol
+    var weatherDetails = [WeatherDetails]()
 
     init(cityName: String) {
         self._cityName = cityName
@@ -217,6 +218,11 @@ class WeatherInstance {
                         print("Temp: \(self.temp)")
                     }
                     
+                    self._lowTemp = ""
+                    self._highTemp = ""
+                    
+                    //Commented out because I need to read the array of 3-hour data for the day to find the min/max temps
+                    /*
                     if let lowTemp = mainDict["temp_min"] {
                         self._lowTemp = ("\(Int(round(lowTemp)))\(self.degree)")
                         print("Low Temp: \(self.lowTemp)")
@@ -226,6 +232,7 @@ class WeatherInstance {
                         self._highTemp = ("\(Int(round(highTemp)))\(self.degree)")
                         print("High Temp: \(self.highTemp)")
                     }
+                    */
                     
                     if let humidity = mainDict["humidity"] {
                         self._humidity = ("\(Int(round(humidity)))\(self.degree)")
@@ -264,6 +271,9 @@ class WeatherInstance {
             
             if let dict = result.value as? Dictionary<String, AnyObject> {
                 if let listDict = dict["list"] as? [Dictionary<String, AnyObject>] where listDict.count > 0 {
+                    
+                    self.fillWeatherDetails(listDict)
+
                     let day1Dict = listDict[0]
                     if let weatherDict = day1Dict["weather"] as? [Dictionary<String, AnyObject>] where weatherDict.count > 0 {
                         if let main = weatherDict[0]["main"] as? String {
@@ -288,19 +298,6 @@ class WeatherInstance {
                                 self._firstWeatherType = weatherTypeEnum.ClearDay
                             }
                             print("Weather Type: \(self._firstWeatherType.rawValue)")
-                        }
-                    }
-                    
-                    if let firstMainDict = day1Dict["main"] as? Dictionary<String, AnyObject>
-                    {
-                        if let firstLowTemp = firstMainDict["temp_min"] as? Double {
-                            self._firstLowTemp = ("\(Int(round(firstLowTemp)))\(self.degree)")
-                            print("Low Temp(1): \(self._firstLowTemp)")
-                        }
-                        
-                        if let firstHighTemp = firstMainDict["temp_max"] as? Double  {
-                            self._firstHighTemp = ("\(Int(round(firstHighTemp)))\(self.degree)")
-                            print("High Temp(1): \(self._firstHighTemp)")
                         }
                     }
                     
@@ -331,19 +328,6 @@ class WeatherInstance {
                         }
                     }
                     
-                    if let secondMainDict = day2Dict["main"] as? Dictionary<String, AnyObject>
-                    {
-                        if let secondLowTemp = secondMainDict["temp_min"] as? Double {
-                            self._secondLowTemp = ("\(Int(round(secondLowTemp)))\(self.degree)")
-                            print("Low Temp(2): \(self._secondLowTemp)")
-                        }
-                        
-                        if let secondHighTemp = secondMainDict["temp_max"] as? Double  {
-                            self._secondHighTemp = ("\(Int(round(secondHighTemp)))\(self.degree)")
-                            print("High Temp(2): \(self._secondHighTemp)")
-                        }
-                    }
-                    
                     let day3Dict = listDict[16]
                     if let weatherDict = day3Dict["weather"] as? [Dictionary<String, AnyObject>] where weatherDict.count > 0 {
                         if let main = weatherDict[0]["main"] as? String {
@@ -368,19 +352,6 @@ class WeatherInstance {
                                 self._thirdWeatherType = weatherTypeEnum.ClearDay
                             }
                             print("Weather Type: \(self._thirdWeatherType.rawValue)")
-                        }
-                    }
-                    
-                    if let thirdMainDict = day3Dict["main"] as? Dictionary<String, AnyObject>
-                    {
-                        if let thirdLowTemp = thirdMainDict["temp_min"] as? Double {
-                            self._thirdLowTemp = ("\(Int(round(thirdLowTemp)))\(self.degree)")
-                            print("Low Temp(3): \(self._thirdLowTemp)")
-                        }
-                        
-                        if let thirdHighTemp = thirdMainDict["temp_max"] as? Double  {
-                            self._thirdHighTemp = ("\(Int(round(thirdHighTemp)))\(self.degree)")
-                            print("High Temp(3): \(self._thirdHighTemp)")
                         }
                     }
                     
@@ -411,19 +382,6 @@ class WeatherInstance {
                         }
                     }
                     
-                    if let fourthMainDict = day4Dict["main"] as? Dictionary<String, AnyObject>
-                    {
-                        if let fourthLowTemp = fourthMainDict["temp_min"] as? Double {
-                            self._fourthLowTemp = ("\(Int(round(fourthLowTemp)))\(self.degree)")
-                            print("Low Temp(4): \(self._fourthLowTemp)")
-                        }
-                        
-                        if let fourthHighTemp = fourthMainDict["temp_max"] as? Double  {
-                            self._fourthHighTemp = ("\(Int(round(fourthHighTemp)))\(self.degree)")
-                            print("High Temp(4): \(self._fourthHighTemp)")
-                        }
-                    }
-                    
                     let day5Dict = listDict[32]
                     if let weatherDict = day5Dict["weather"] as? [Dictionary<String, AnyObject>] where weatherDict.count > 0 {
                         if let main = weatherDict[0]["main"] as? String {
@@ -450,19 +408,6 @@ class WeatherInstance {
                             print("Weather Type: \(self._fifthWeatherType.rawValue)")
                         }
                     }
-                    
-                    if let fifthMainDict = day5Dict["main"] as? Dictionary<String, AnyObject>
-                    {
-                        if let fifthLowTemp = fifthMainDict["temp_min"] as? Double {
-                            self._fifthLowTemp = ("\(Int(round(fifthLowTemp)))\(self.degree)")
-                            print("Low Temp(5): \(self._fifthLowTemp)")
-                        }
-                        
-                        if let fifthHighTemp = fifthMainDict["temp_max"] as? Double  {
-                            self._fifthHighTemp = ("\(Int(round(fifthHighTemp)))\(self.degree)")
-                            print("High Temp(5): \(self._fifthHighTemp)")
-                        }
-                    }
                     completed()
                 }
             }
@@ -476,4 +421,212 @@ class WeatherInstance {
         dateFormatter.dateFormat = "hh:mm a"
         return dateFormatter.stringFromDate(date)
     }
+    
+    func getDateWithoutTime(time: Double) -> NSDate {
+        //let newDate = cal.startOfDayForDate(NSDate(timeIntervalSince1970: time))
+        
+        let cal: NSCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
+        let newDate: NSDate = cal.dateBySettingHour(0, minute: 0, second: 0, ofDate: NSDate(timeIntervalSince1970: time), options: NSCalendarOptions())!
+        
+        return newDate
+    }
+    
+    func fillWeatherDetails(listDict: [Dictionary<String, AnyObject>]) {
+        for i in 0..<listDict.count {
+            let dayDict = listDict[i]
+            
+            var weatherDate: NSDate!
+            
+            if let detailDate = dayDict["dt"] as? Double {
+                weatherDate = getDateWithoutTime(detailDate)
+            } else {
+                weatherDate = NSDate()
+            }
+            
+            var weatherType: weatherTypeEnum!
+            
+            if let weatherDict = dayDict["weather"] as? [Dictionary<String, AnyObject>] where weatherDict.count > 0 {
+                if let main = weatherDict[0]["main"] as? String {
+                    switch main {
+                    case "Clear":
+                        if self.isDay() {
+                            weatherType = weatherTypeEnum.ClearDay
+                        } else {
+                            weatherType = weatherTypeEnum.ClearNight
+                        }
+                    case "Rain":
+                        weatherType = weatherTypeEnum.Rain
+                    case "Clouds":
+                        weatherType = weatherTypeEnum.Cloudy
+                    case "Thunderstorm":
+                        weatherType = weatherTypeEnum.ThunderShowers
+                    case "Snow":
+                        weatherType = weatherTypeEnum.Snow
+                    case "Hail":
+                        weatherType = weatherTypeEnum.Hail
+                    default:
+                        weatherType = weatherTypeEnum.ClearDay
+                    }
+                }
+            }
+            
+            var lowTempStr: String!
+            var highTempStr: String!
+            var lowTempInt: Int = 0
+            var highTempInt: Int = 0
+            
+            if let mainDict = dayDict["main"] as? Dictionary<String, AnyObject>
+            {
+                if let lowTemp = mainDict["temp_min"] as? Double {
+                    lowTempStr = ("\(Int(round(lowTemp)))\(self.degree)")
+                    lowTempInt = Int(round(lowTemp))
+                }
+                
+                if let highTemp = mainDict["temp_max"] as? Double  {
+                    highTempStr = ("\(Int(round(highTemp)))\(self.degree)")
+                    highTempInt = Int(round(highTemp))
+                }
+            }
+            
+            let detail = WeatherDetails(weatherDate: weatherDate, weatherType: weatherType, lowTemp: lowTempInt, highTemp: highTempInt, lowTempStr: lowTempStr, highTempStr: highTempStr)
+            weatherDetails.append(detail)
+        } //weatherDetails() Array filled, now find data for each day
+        
+        //Today's High and Low temp
+        let calendar = NSCalendar.autoupdatingCurrentCalendar()
+        
+        let targetData = weatherDetails.filter({calendar.isDateInToday($0.weatherDate)})
+        
+        let minElement = targetData.minElement ({ (a, b) -> Bool in
+            return a.highTemp < b.highTemp
+        })
+        let minTempInt = minElement?.lowTemp
+        let minTempStr = minTempInt!
+        self._lowTemp = ("\(minTempStr)\(self.degree)")
+        
+        let maxElement = targetData.maxElement ({ (a, b) -> Bool in
+            return a.highTemp < b.highTemp
+        })
+        let maxTempInt = maxElement?.highTemp
+        let maxTempStr = maxTempInt!
+        self._highTemp = ("\(maxTempStr)\(self.degree)")
+        
+        print("Today's Final High: \(self._highTemp)")
+        print("Today's Final Low: \(self._lowTemp)")
+        
+        let cal: NSCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
+        let dayPlusOne: NSDate = cal.dateBySettingHour(0, minute: 0, second: 0, ofDate: NSDate().addDays(1), options: NSCalendarOptions())!
+        let dayPlusTwo: NSDate = cal.dateBySettingHour(0, minute: 0, second: 0, ofDate: NSDate().addDays(2), options: NSCalendarOptions())!
+        let dayPlusThree: NSDate = cal.dateBySettingHour(0, minute: 0, second: 0, ofDate: NSDate().addDays(3), options: NSCalendarOptions())!
+        let dayPlusFour: NSDate = cal.dateBySettingHour(0, minute: 0, second: 0, ofDate: NSDate().addDays(4), options: NSCalendarOptions())!
+        let dayPlusFive: NSDate = cal.dateBySettingHour(0, minute: 0, second: 0, ofDate: NSDate().addDays(5), options: NSCalendarOptions())!
+        
+        var weatherDetailsPlus1 = [WeatherDetails]()
+        var weatherDetailsPlus2 = [WeatherDetails]()
+        var weatherDetailsPlus3 = [WeatherDetails]()
+        var weatherDetailsPlus4 = [WeatherDetails]()
+        var weatherDetailsPlus5 = [WeatherDetails]()
+        
+        for days in 1...5 {
+            for i in 0..<weatherDetails.count {
+                switch days {
+                case 1:
+                    if weatherDetails[i].weatherDate.compare(dayPlusOne) == NSComparisonResult.OrderedSame {
+                        weatherDetailsPlus1.append(weatherDetails[i])
+                    }
+                case 2:
+                    if weatherDetails[i].weatherDate.compare(dayPlusTwo) == NSComparisonResult.OrderedSame {
+                        weatherDetailsPlus2.append(weatherDetails[i])
+                    }
+                case 3:
+                    if weatherDetails[i].weatherDate.compare(dayPlusThree) == NSComparisonResult.OrderedSame {
+                        weatherDetailsPlus3.append(weatherDetails[i])
+                    }
+                case 4:
+                    if weatherDetails[i].weatherDate.compare(dayPlusFour) == NSComparisonResult.OrderedSame {
+                        weatherDetailsPlus4.append(weatherDetails[i])
+                    }
+                case 5:
+                    if weatherDetails[i].weatherDate.compare(dayPlusFive) == NSComparisonResult.OrderedSame {
+                        weatherDetailsPlus5.append(weatherDetails[i])
+                    }
+                default:
+                    print("did nothing")
+                }
+            }
+        }
+        
+        if let minElementPlus1 = weatherDetailsPlus1.minElement ({ (a, b) -> Bool in
+            return a.lowTemp < b.lowTemp}) {
+            self._firstLowTemp = ("\(minElementPlus1.lowTemp)\(self.degree)")
+        } else {
+            self._firstLowTemp = ""
+        }
+        if let maxElementPlus1 = weatherDetailsPlus1.maxElement ({ (a, b) -> Bool in
+            return a.highTemp < b.highTemp}) {
+            self._firstHighTemp = ("\(maxElementPlus1.highTemp)\(self.degree)")
+        } else {
+            self._firstHighTemp = ""
+        }
+        
+        if let minElementPlus2 = weatherDetailsPlus2.minElement ({ (a, b) -> Bool in
+            return a.lowTemp < b.lowTemp}) {
+            self._secondLowTemp = ("\(minElementPlus2.lowTemp)\(self.degree)")
+        } else {
+            self._secondLowTemp = ""
+        }
+        if let maxElementPlus2 = weatherDetailsPlus2.maxElement ({ (a, b) -> Bool in
+            return a.highTemp < b.highTemp}) {
+            self._secondHighTemp = ("\(maxElementPlus2.highTemp)\(self.degree)")
+        } else {
+            self._secondHighTemp = ""
+        }
+        if let minElementPlus3 = weatherDetailsPlus3.minElement ({ (a, b) -> Bool in
+            return a.lowTemp < b.lowTemp}) {
+            self._thirdLowTemp = ("\(minElementPlus3.lowTemp)\(self.degree)")
+        } else {
+            self._thirdLowTemp = ""
+        }
+        if let maxElementPlus3 = weatherDetailsPlus3.maxElement ({ (a, b) -> Bool in
+            return a.highTemp < b.highTemp}) {
+            self._thirdHighTemp = ("\(maxElementPlus3.highTemp)\(self.degree)")
+        } else {
+            self._thirdHighTemp = ""
+        }
+        if let minElementPlus4 = weatherDetailsPlus4.minElement ({ (a, b) -> Bool in
+            return a.lowTemp < b.lowTemp}){
+            self._fourthLowTemp = ("\(minElementPlus4.lowTemp)\(self.degree)")
+        } else {
+            self._fourthLowTemp = ""
+        }
+        if let maxElementPlus4 = weatherDetailsPlus4.maxElement ({ (a, b) -> Bool in
+            return a.highTemp < b.highTemp}) {
+            self._fourthHighTemp = ("\(maxElementPlus4.highTemp)\(self.degree)")
+        } else {
+            self._fourthHighTemp = ""
+        }
+        if let minElementPlus5 = weatherDetailsPlus5.minElement ({ (a, b) -> Bool in
+            return a.lowTemp < b.lowTemp}) {
+            self._fifthLowTemp = ("\(minElementPlus5.lowTemp)\(self.degree)")
+        } else {
+            self._fifthLowTemp = ""
+        }
+        if let maxElementPlus5 = weatherDetailsPlus5.maxElement ({ (a, b) -> Bool in
+            return a.highTemp < b.highTemp}) {
+            self._fifthHighTemp = ("\(maxElementPlus5.highTemp)\(self.degree)")
+        } else {
+            self._fifthHighTemp = ""
+        }
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
