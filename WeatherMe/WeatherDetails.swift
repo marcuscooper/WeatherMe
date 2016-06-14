@@ -10,7 +10,6 @@ import Foundation
 
 class WeatherDetails {
     var _weatherDate: NSDate!
-    var _weatherType: WeatherInstance.weatherTypeEnum!
     var _lowTemp: Int!
     var _highTemp: Int!
     var _lowTempStr: String!
@@ -18,10 +17,6 @@ class WeatherDetails {
     
     var weatherDate: NSDate {
         return _weatherDate
-    }
-    
-    var weatherType: WeatherInstance.weatherTypeEnum {
-        return _weatherType
     }
     
     var lowTemp: Int {
@@ -40,9 +35,8 @@ class WeatherDetails {
         return _highTempStr
     }
     
-    init(weatherDate: NSDate, weatherType: WeatherInstance.weatherTypeEnum, lowTemp: Int, highTemp: Int, lowTempStr: String, highTempStr: String) {
+    init(weatherDate: NSDate, lowTemp: Int, highTemp: Int, lowTempStr: String, highTempStr: String) {
         self._weatherDate = weatherDate
-        self._weatherType = weatherType
         self._lowTemp = lowTemp
         self._highTemp = highTemp
         self._lowTempStr = lowTempStr

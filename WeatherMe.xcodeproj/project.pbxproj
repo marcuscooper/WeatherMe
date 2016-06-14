@@ -98,6 +98,7 @@
 			isa = PBXGroup;
 			children = (
 				AB7B1CB61D0DE15200A8E3CB /* WeatherInstance.swift */,
+				AB7B1CBA1D0EE86F00A8E3CB /* WeatherDetails.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -125,7 +126,6 @@
 			children = (
 				AB7B1CB51D0DE08200A8E3CB /* Model */,
 				AB7B1CB41D0DE07B00A8E3CB /* View */,
-				AB7B1CBA1D0EE86F00A8E3CB /* WeatherDetails.swift */,
 				AB7B1CB31D0DE07100A8E3CB /* Controller */,
 				AB7B1CB21D0DE06900A8E3CB /* Utils */,
 				ABC424391D0D104D00FB5942 /* AppDelegate.swift */,

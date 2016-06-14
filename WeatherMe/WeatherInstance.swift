@@ -22,6 +22,7 @@ class WeatherInstance {
         case Snow = "Snow"
         case ThunderShowers = "ThunderShowers.png"
         case Wind = "Wind.png"
+        case Error = ""
     }
     
     private var _cityName: String!
@@ -166,7 +167,11 @@ class WeatherInstance {
     }
     
     func downloadCurentWeatherDetails(completed: DownloadComplete) {
-        _currentWeatherUrl = "\(URL_CURRENT_BASE)\(self._cityName)\(URL_OPTIONS)\(URL_UNITS)\(URL_KEY)"
+        if let isNumber = Int(self._cityName) { //Should be treated as ZIP
+            _currentWeatherUrl = "\(URL_CURRENT_BASE_ZIP)\(self._cityName)\(URL_OPTIONS)\(URL_UNITS)\(URL_KEY)"
+        } else { //Should be treated as City Name
+            _currentWeatherUrl = "\(URL_CURRENT_BASE_CITY)\(self._cityName)\(URL_OPTIONS)\(URL_UNITS)\(URL_KEY)"
+        }
         _currentWeatherUrl = _currentWeatherUrl.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
        let url = NSURL(string: _currentWeatherUrl)!
         print("CURRENT URL: \(url)")
@@ -218,21 +223,8 @@ class WeatherInstance {
                         print("Temp: \(self.temp)")
                     }
                     
-                    self._lowTemp = ""
-                    self._highTemp = ""
-                    
-                    //Commented out because I need to read the array of 3-hour data for the day to find the min/max temps
-                    /*
-                    if let lowTemp = mainDict["temp_min"] {
-                        self._lowTemp = ("\(Int(round(lowTemp)))\(self.degree)")
-                        print("Low Temp: \(self.lowTemp)")
-                    }
-                    
-                    if let highTemp = mainDict["temp_max"] {
-                        self._highTemp = ("\(Int(round(highTemp)))\(self.degree)")
-                        print("High Temp: \(self.highTemp)")
-                    }
-                    */
+                    //self._lowTemp = ""
+                    //self._highTemp = ""
                     
                     if let humidity = mainDict["humidity"] {
                         self._humidity = ("\(Int(round(humidity)))\(self.degree)")
@@ -257,13 +249,32 @@ class WeatherInstance {
                         print("Wind Speed: \(self.windSpeed)")
                     }
                 }
+                
+                //see if we received an error from the service for this city or zip
+                if let error = dict["message"] as? String {
+                    print(error)
+                    
+                    //setting all fields to ""
+                    self._cityName = "City not found"
+                    self._weatherType = weatherTypeEnum.Error
+                    self._temp = ""
+                    self._humidity = ""
+                    self._windSpeed = ""
+                    self._sunrise = ""
+                    self._sunset = ""
+                }
                 completed()
             }
         }
     }
     
     func downloadFutureWeatherDetails(completed: DownloadComplete) {
-        _forecastWeatherUrl = "\(URL_FORECAST_BASE)\(self._cityName)\(URL_OPTIONS)\(URL_UNITS)\(URL_KEY)"
+        if let isNumber = Int(self._cityName) { //Should be treated as ZIP
+            _forecastWeatherUrl = "\(URL_FORECAST_BASE_ZIP)\(self._cityName)\(URL_OPTIONS)\(URL_UNITS)\(URL_KEY)"
+        } else { //Should be treated as City Name
+            _forecastWeatherUrl = "\(URL_FORECAST_BASE_CITY)\(self._cityName)\(URL_OPTIONS)\(URL_UNITS)\(URL_KEY)"
+        }
+        
         _forecastWeatherUrl = _forecastWeatherUrl.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
         let url = NSURL(string: _forecastWeatherUrl)!
         print("FORECAST URL: \(url)")
@@ -410,8 +421,31 @@ class WeatherInstance {
                             print("Weather Type: \(self._fifthWeatherType.rawValue)")
                         }
                     }
-                    completed()
                 }
+                if let error = dict["message"] as? String {
+                    print(error)
+                    
+                    //setting all fields to ""
+                    self._firstWeatherType = weatherTypeEnum.Error
+                    self._secondWeatherType = weatherTypeEnum.Error
+                    self._thirdWeatherType = weatherTypeEnum.Error
+                    self._fourthWeatherType = weatherTypeEnum.Error
+                    self._fifthWeatherType = weatherTypeEnum.Error
+                    self._lowTemp = ""
+                    self._highTemp = ""
+                    self._firstLowTemp = ""
+                    self._firstHighTemp = ""
+                    self._secondLowTemp = ""
+                    self._secondHighTemp = ""
+                    self._thirdLowTemp = ""
+                    self._thirdHighTemp = ""
+                    self._fourthLowTemp = ""
+                    self._fourthHighTemp = ""
+                    self._fifthLowTemp = ""
+                    self._fifthHighTemp = ""
+                }
+                
+                completed()
             }
         }
     }
@@ -445,33 +479,6 @@ class WeatherInstance {
                 weatherDate = NSDate()
             }
             
-            var weatherType: weatherTypeEnum!
-            
-            if let weatherDict = dayDict["weather"] as? [Dictionary<String, AnyObject>] where weatherDict.count > 0 {
-                if let main = weatherDict[0]["main"] as? String {
-                    switch main {
-                    case "Clear":
-                        if self.isDay() {
-                            weatherType = weatherTypeEnum.ClearDay
-                        } else {
-                            weatherType = weatherTypeEnum.ClearNight
-                        }
-                    case "Rain":
-                        weatherType = weatherTypeEnum.Rain
-                    case "Clouds":
-                        weatherType = weatherTypeEnum.Cloudy
-                    case "Thunderstorm":
-                        weatherType = weatherTypeEnum.ThunderShowers
-                    case "Snow":
-                        weatherType = weatherTypeEnum.Snow
-                    case "Hail":
-                        weatherType = weatherTypeEnum.Hail
-                    default:
-                        weatherType = weatherTypeEnum.ClearDay
-                    }
-                }
-            }
-            
             var lowTempStr: String!
             var highTempStr: String!
             var lowTempInt: Int = 0
@@ -490,7 +497,7 @@ class WeatherInstance {
                 }
             }
             
-            let detail = WeatherDetails(weatherDate: weatherDate, weatherType: weatherType, lowTemp: lowTempInt, highTemp: highTempInt, lowTempStr: lowTempStr, highTempStr: highTempStr)
+            let detail = WeatherDetails(weatherDate: weatherDate, lowTemp: lowTempInt, highTemp: highTempInt, lowTempStr: lowTempStr, highTempStr: highTempStr)
             weatherDetails.append(detail)
         } //weatherDetails() Array filled, now find data for each day
         
