@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var cityNameLbl: UILabel!
     @IBOutlet weak var currentWeatherImg: UIImageView!
@@ -47,9 +47,15 @@ class ViewController: UIViewController {
     @IBOutlet weak var dayFiveLowTempLbl: UILabel!
     
     @IBOutlet weak var sunSetRiseView: UIView!
+    @IBOutlet weak var sunSetRiseBtn: UIButton!
     @IBOutlet weak var sunriseTimeLbl: UILabel!
     @IBOutlet weak var sunsetTimeLbl: UILabel!
     
+    @IBOutlet weak var locationChangeView: UIView!
+    @IBOutlet weak var locationPinBtn: UIButton!
+    @IBOutlet weak var locationNameBtn: UIButton!
+    @IBOutlet weak var locationFieldTxtField: UITextField!
+
     var cityName: String!
     var weatherInstance: WeatherInstance!
     var currentTime: String!
@@ -61,10 +67,16 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.locationFieldTxtField.delegate = self;
     }
     
     override func viewWillAppear(animated: Bool) {
         cityName = "Charlotte"
+        populateData()
+    }
+    
+    func populateData() {
         weatherInstance = WeatherInstance.init(cityName: cityName)
         
         let timeStyler = NSDateFormatter()
@@ -213,11 +225,62 @@ class ViewController: UIViewController {
         } else {
             sunSetRiseView.hidden = true
         }
+        locationPinBtn.enabled = false
+        locationNameBtn.enabled = false
     }
-    
 
     @IBAction func closeSunSetRiseBtnTapped(sender: AnyObject) {
         sunSetRiseView.hidden = true
+        locationPinBtn.enabled = true
+        locationNameBtn.enabled = true
+    }
+    
+    @IBAction func locationPinBtnTapped(sender: AnyObject) {
+        presentChangeLocationView()
+    }
+    
+    @IBAction func locationNameBtnTapped(sender: AnyObject) {
+        presentChangeLocationView()
+    }
+    
+    func presentChangeLocationView() {
+        self.locationFieldTxtField.becomeFirstResponder()
+        disableButtons()
+    }
+    
+    func disableButtons() {
+        locationPinBtn.enabled = false
+        locationNameBtn.enabled = false
+        sunSetRiseBtn.enabled = false
+        locationChangeView.hidden = false
+    }
+    
+    func enableButtons() {
+        locationPinBtn.enabled = true
+        locationNameBtn.enabled = true
+        sunSetRiseBtn.enabled = true
+        locationChangeView.hidden = true
+    }
+
+    @IBAction func locationChangeCancelBtnTapped(sender: AnyObject) {
+        enableButtons()
+    }
+    
+    @IBAction func locationChangeSubmitBtnTapped(sender: AnyObject) {
+        enableButtons()
+        cityName = locationFieldTxtField.text
+        view.endEditing(true)
+        populateData()
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        self.view.endEditing(true)
+        enableButtons()
+        cityName = locationFieldTxtField.text
+        view.endEditing(true)
+        populateData()
+
+        return false
     }
 }
 

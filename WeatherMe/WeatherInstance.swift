@@ -159,8 +159,6 @@ class WeatherInstance {
     init(cityName: String) {
         self._cityName = cityName
         
-        _currentWeatherUrl = "\(URL_CURRENT_BASE)\(self._cityName)\(URL_OPTIONS)\(URL_UNITS)\(URL_KEY)"
-        _forecastWeatherUrl = "\(URL_FORECAST_BASE)\(self._cityName)\(URL_OPTIONS)\(URL_UNITS)\(URL_KEY)"
     }
     
     func isDay() -> Bool {
@@ -168,7 +166,9 @@ class WeatherInstance {
     }
     
     func downloadCurentWeatherDetails(completed: DownloadComplete) {
-        let url = NSURL(string: _currentWeatherUrl)!
+        _currentWeatherUrl = "\(URL_CURRENT_BASE)\(self._cityName)\(URL_OPTIONS)\(URL_UNITS)\(URL_KEY)"
+        _currentWeatherUrl = _currentWeatherUrl.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
+       let url = NSURL(string: _currentWeatherUrl)!
         print("CURRENT URL: \(url)")
         
         Alamofire.request(.GET, url).responseJSON { response in
@@ -263,6 +263,8 @@ class WeatherInstance {
     }
     
     func downloadFutureWeatherDetails(completed: DownloadComplete) {
+        _forecastWeatherUrl = "\(URL_FORECAST_BASE)\(self._cityName)\(URL_OPTIONS)\(URL_UNITS)\(URL_KEY)"
+        _forecastWeatherUrl = _forecastWeatherUrl.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
         let url = NSURL(string: _forecastWeatherUrl)!
         print("FORECAST URL: \(url)")
         
