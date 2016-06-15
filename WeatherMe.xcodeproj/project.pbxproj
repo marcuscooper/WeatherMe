@@ -12,6 +12,7 @@
 		AB7B1CB91D0DE94C00A8E3CB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7B1CB81D0DE94C00A8E3CB /* Constants.swift */; };
 		AB7B1CBB1D0EE86F00A8E3CB /* WeatherDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7B1CBA1D0EE86F00A8E3CB /* WeatherDetails.swift */; };
 		AB7B1CBF1D1037F900A8E3CB /* NSDateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7B1CBE1D1037F900A8E3CB /* NSDateExtension.swift */; };
+		AB7B1CC11D10BFFC00A8E3CB /* InfoVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7B1CC01D10BFFC00A8E3CB /* InfoVC.swift */; };
 		ABC4243A1D0D104D00FB5942 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC424391D0D104D00FB5942 /* AppDelegate.swift */; };
 		ABC4243C1D0D104D00FB5942 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABC4243B1D0D104D00FB5942 /* ViewController.swift */; };
 		ABC4243F1D0D104D00FB5942 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ABC4243D1D0D104D00FB5942 /* Main.storyboard */; };
@@ -27,6 +28,7 @@
 		AB7B1CB81D0DE94C00A8E3CB /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		AB7B1CBA1D0EE86F00A8E3CB /* WeatherDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherDetails.swift; sourceTree = "<group>"; };
 		AB7B1CBE1D1037F900A8E3CB /* NSDateExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDateExtension.swift; sourceTree = "<group>"; };
+		AB7B1CC01D10BFFC00A8E3CB /* InfoVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfoVC.swift; sourceTree = "<group>"; };
 		ABC424361D0D104D00FB5942 /* WeatherMe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherMe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABC424391D0D104D00FB5942 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ABC4243B1D0D104D00FB5942 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				ABC4243B1D0D104D00FB5942 /* ViewController.swift */,
+				AB7B1CC01D10BFFC00A8E3CB /* InfoVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 				ABC4243C1D0D104D00FB5942 /* ViewController.swift in Sources */,
 				AB7B1CB71D0DE15200A8E3CB /* WeatherInstance.swift in Sources */,
 				ABC4243A1D0D104D00FB5942 /* AppDelegate.swift in Sources */,
+				AB7B1CC11D10BFFC00A8E3CB /* InfoVC.swift in Sources */,
 				AB7B1CBB1D0EE86F00A8E3CB /* WeatherDetails.swift in Sources */,
 				AB7B1CB91D0DE94C00A8E3CB /* Constants.swift in Sources */,
 			);
@@ -387,6 +391,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.szlsoft.WeatherMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -402,6 +407,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.szlsoft.WeatherMe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

@@ -56,6 +56,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var locationPinBtn: UIButton!
     @IBOutlet weak var locationNameBtn: UIButton!
     @IBOutlet weak var locationFieldTxtField: UITextField!
+    @IBOutlet weak var infoBtn: UIButton!
 
     var cityName: String!
     var weatherInstance: WeatherInstance!
