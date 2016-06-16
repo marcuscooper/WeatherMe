@@ -75,6 +75,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     override func viewWillAppear(animated: Bool) {
         cityName = "Charlotte"
+        initUI()
         populateData()
     }
     
@@ -145,11 +146,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBAction func didPressSunRiseSetBtn(sender: AnyObject) {
         if sunSetRiseView.hidden {
             sunSetRiseView.hidden = false
+            locationPinBtn.enabled = false
+            locationNameBtn.enabled = false
         } else {
             sunSetRiseView.hidden = true
+            buttonState(true)
         }
-        locationPinBtn.enabled = false
-        locationNameBtn.enabled = false
     }
 
     @IBAction func closeSunSetRiseBtnTapped(sender: AnyObject) {
@@ -159,7 +161,6 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func locationPinBtnTapped(sender: AnyObject) {
         presentChangeLocationView()
-        buttonState(false)
     }
     
     @IBAction func locationNameBtnTapped(sender: AnyObject) {
@@ -221,6 +222,46 @@ class ViewController: UIViewController, UITextFieldDelegate {
             default:
                 backgroundImg.image = UIImage(named: "")
         }
+    }
+    
+    func initUI() {
+        cityNameLbl.text = ""
+        currentWeatherImg.image = UIImage(named: "")
+        currentTempLbl.text = ""
+        currentTimeLbl.text = ""
+        currentDayLbl.text = ""
+        todayHighTempLbl.text = ""
+        todayLowTempLbl.text = ""
+        windSpeedLbl.text = ""
+        humidityLbl.text = ""
+        
+        dayOneDayLbl.text = ""
+        dayOneWeatherImg.image = UIImage(named: "")
+        dayOneHighTempLbl.text = ""
+        dayOneLowTempLbl.text = ""
+        
+        dayTwoDayLbl.text = ""
+        dayTwoWeatherImg.image = UIImage(named: "")
+        dayTwoHighTempLbl.text = ""
+        dayTwoLowTempLbl.text = ""
+        
+        dayThreeDayLbl.text = ""
+        dayThreeWeatherImg.image = UIImage(named: "")
+        dayThreeHighTempLbl.text = ""
+        dayThreeLowTempLbl.text = ""
+        
+        dayFourDayLbl.text = ""
+        dayFourWeatherImg.image = UIImage(named: "")
+        dayFourHighTempLbl.text = ""
+        dayFourLowTempLbl.text = ""
+        
+        dayFiveDayLbl.text = ""
+        dayFiveWeatherImg.image = UIImage(named: "")
+        dayFiveHighTempLbl.text = ""
+        dayFiveLowTempLbl.text = ""
+        
+        sunriseTimeLbl.text = ""
+        sunsetTimeLbl.text = ""
     }
 }
 

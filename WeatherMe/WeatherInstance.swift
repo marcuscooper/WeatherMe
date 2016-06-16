@@ -223,8 +223,13 @@ class WeatherInstance {
                         print("Temp: \(self.temp)")
                     }
                     
-                    //self._lowTemp = ""
-                    //self._highTemp = ""
+                    if let lowT = mainDict["temp_min"] {
+                        self._lowTemp = ("\(lowT)\(self.degree)")
+                    }
+                    
+                    if let highT = mainDict["temp_max"] {
+                        self._highTemp = ("\(highT)\(self.degree)")
+                    }
                     
                     if let humidity = mainDict["humidity"] {
                         self._humidity = ("\(Int(round(humidity)))\(self.degree)")
@@ -501,28 +506,32 @@ class WeatherInstance {
             weatherDetails.append(detail)
         } //weatherDetails() Array filled, now find data for each day
         
-        //Today's High and Low temp
         let calendar = NSCalendar.autoupdatingCurrentCalendar()
         
         let targetData = weatherDetails.filter({calendar.isDateInToday($0.weatherDate)})
         
-        let minElement = targetData.minElement ({ (a, b) -> Bool in
-            return a.highTemp < b.highTemp
-        })
-        let minTempInt = minElement?.lowTemp
-        let minTempStr = minTempInt!
-        self._lowTemp = ("\(minTempStr)\(self.degree)")
-        
-        let maxElement = targetData.maxElement ({ (a, b) -> Bool in
-            return a.highTemp < b.highTemp
-        })
-        let maxTempInt = maxElement?.highTemp
-        let maxTempStr = maxTempInt!
-        self._highTemp = ("\(maxTempStr)\(self.degree)")
-        
-        print("Today's Final High: \(self._highTemp)")
-        print("Today's Final Low: \(self._lowTemp)")
-        
+        if  targetData.count > 0 {
+            //Today's High and Low temp
+            let minElement = targetData.minElement ({ (a, b) -> Bool in
+                return a.highTemp < b.highTemp
+            })
+            let minTempInt = minElement?.lowTemp
+            let minTempStr = minTempInt!
+            self._lowTemp = ("\(minTempStr)\(self.degree)")
+            
+            let maxElement = targetData.maxElement ({ (a, b) -> Bool in
+                return a.highTemp < b.highTemp
+            })
+            let maxTempInt = maxElement?.highTemp
+            let maxTempStr = maxTempInt!
+            self._highTemp = ("\(maxTempStr)\(self.degree)")
+            
+            print("Today's Final High: \(self._highTemp)")
+            print("Today's Final Low: \(self._lowTemp)")
+        } else {
+            self._lowTemp = ""
+            self._highTemp = ""
+        }
         let cal: NSCalendar = NSCalendar(calendarIdentifier: NSCalendarIdentifierGregorian)!
         let dayPlusOne: NSDate = cal.dateBySettingHour(0, minute: 0, second: 0, ofDate: NSDate().addDays(1), options: NSCalendarOptions())!
         let dayPlusTwo: NSDate = cal.dateBySettingHour(0, minute: 0, second: 0, ofDate: NSDate().addDays(2), options: NSCalendarOptions())!
