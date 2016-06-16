@@ -30,3 +30,5 @@ class InfoVC: UIViewController {
         }
     }
 }
+
+//http://openweathermap.org
