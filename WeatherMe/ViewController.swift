@@ -169,6 +169,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     func presentChangeLocationView() {
         self.locationFieldTxtField.becomeFirstResponder()
+        locationFieldTxtField.selectedTextRange = locationFieldTxtField.textRangeFromPosition(locationFieldTxtField.beginningOfDocument, toPosition: locationFieldTxtField.endOfDocument)
+
         buttonState(false)
     }
     
