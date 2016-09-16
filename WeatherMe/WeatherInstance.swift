@@ -26,6 +26,7 @@ class WeatherInstance {
     }
     
     private var _cityName: String!
+    private var _countryCode: String!
     private var _weatherType: weatherTypeEnum!
     private var _temp: String!
     private var _highTemp: String!
@@ -61,7 +62,11 @@ class WeatherInstance {
     var cityName: String {
         return _cityName
     }
-
+    
+    var countryCode: String {
+        return _countryCode
+    }
+    
     var weatherType: weatherTypeEnum {
         return _weatherType
     }
@@ -167,11 +172,16 @@ class WeatherInstance {
     }
     
     func downloadCurentWeatherDetails(completed: DownloadComplete) {
-        if let isNumber = Int(self._cityName) { //Should be treated as ZIP
-            _currentWeatherUrl = "\(URL_CURRENT_BASE_ZIP)\(self._cityName)\(URL_OPTIONS)\(URL_UNITS)\(URL_KEY)"
-        } else { //Should be treated as City Name
-            _currentWeatherUrl = "\(URL_CURRENT_BASE_CITY)\(self._cityName)\(URL_OPTIONS)\(URL_UNITS)\(URL_KEY)"
+        if self._cityName.rangeOfString("&lon") != nil { //Treat as latitude and longitude
+            _currentWeatherUrl = "\(URL_CURRENT_BASE)\(self._cityName)\(URL_OPTIONS)\(URL_UNITS)\(URL_KEY)"
+        } else {
+            if let _ = Int(self._cityName) { //Should be treated as ZIP
+                _currentWeatherUrl = "\(URL_CURRENT_BASE_ZIP)\(self._cityName)\(URL_OPTIONS)\(URL_UNITS)\(URL_KEY)"
+            } else { //Should be treated as City Name
+                _currentWeatherUrl = "\(URL_CURRENT_BASE)q=\(self._cityName)\(URL_OPTIONS)\(URL_UNITS)\(URL_KEY)"
+            }
         }
+        
         _currentWeatherUrl = _currentWeatherUrl.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
        let url = NSURL(string: _currentWeatherUrl)!
         print("CURRENT URL: \(url)")
@@ -238,6 +248,12 @@ class WeatherInstance {
                 
                 if let sysDict = dict["sys"] as? Dictionary<String, AnyObject>
                 {
+                    if let country = sysDict["country"] as? String {
+                        if country != "US" {
+                            self._cityName = "\(self._cityName), \(country)"
+                        }
+                    }
+                    
                     if let sunriseInt = sysDict["sunrise"] as? Double {
                         self._sunrise = self.getTimeString(sunriseInt)
                     }
@@ -274,13 +290,18 @@ class WeatherInstance {
     }
     
     func downloadFutureWeatherDetails(completed: DownloadComplete) {
-        if let isNumber = Int(self._cityName) { //Should be treated as ZIP
-            _forecastWeatherUrl = "\(URL_FORECAST_BASE_ZIP)\(self._cityName)\(URL_OPTIONS)\(URL_UNITS)\(URL_KEY)"
-        } else { //Should be treated as City Name
-            _forecastWeatherUrl = "\(URL_FORECAST_BASE_CITY)\(self._cityName)\(URL_OPTIONS)\(URL_UNITS)\(URL_KEY)"
+        if self._cityName.rangeOfString("&lon") != nil { //Treat as latitude and longitude
+            _forecastWeatherUrl = "\(URL_FORECAST_BASE)\(self._cityName)\(URL_OPTIONS)\(URL_UNITS)\(URL_KEY)"
+        } else {
+            if let _ = Int(self._cityName) { //Should be treated as ZIP
+                _forecastWeatherUrl = "\(URL_FORECAST_BASE_ZIP)\(self._cityName)\(URL_OPTIONS)\(URL_UNITS)\(URL_KEY)"
+            } else { //Should be treated as City Name
+                _forecastWeatherUrl = "\(URL_FORECAST_BASE)q=\(self._cityName)\(URL_OPTIONS)\(URL_UNITS)\(URL_KEY)"
+            }
         }
         
         _forecastWeatherUrl = _forecastWeatherUrl.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())!
+        
         let url = NSURL(string: _forecastWeatherUrl)!
         print("FORECAST URL: \(url)")
         

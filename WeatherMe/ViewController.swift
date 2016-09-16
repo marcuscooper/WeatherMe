@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import CoreLocation
 
-class ViewController: UIViewController, UITextFieldDelegate {
+class ViewController: UIViewController, UITextFieldDelegate, CLLocationManagerDelegate {
 
     @IBOutlet weak var backgroundImg: UIImageView!
     @IBOutlet weak var cityNameLbl: UILabel!
@@ -57,8 +58,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var locationNameBtn: UIButton!
     @IBOutlet weak var locationFieldTxtField: UITextField!
     @IBOutlet weak var infoBtn: UIButton!
+    @IBOutlet weak var setToCurrentLocationBtn: UIButton!
 
     var cityName: String!
+    var lat: Float!
+    var long: Float!
     var weatherInstance: WeatherInstance!
     var currentTime: String!
     var dayPlusOne: String!
@@ -67,40 +71,42 @@ class ViewController: UIViewController, UITextFieldDelegate {
     var dayPlusFour: String!
     var dayPlusFive: String!
     
+    var locationManager = CLLocationManager()
+    var currentLocation: CLLocationCoordinate2D!
+    
+    var hasLocation = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        getLocation()
         
-        self.locationFieldTxtField.delegate = self;
-    }
-    
-    override func viewWillAppear(animated: Bool) {
-        cityName = "Charlotte"
-        initUI()
-        populateData()
+        locationFieldTxtField.delegate = self;
     }
     
     func populateData() {
-        weatherInstance = WeatherInstance.init(cityName: cityName)
-        
-        let timeStyler = NSDateFormatter()
-        timeStyler.timeStyle = NSDateFormatterStyle.ShortStyle
-        currentTime = timeStyler.stringFromDate(NSDate())
-        
-        let dayArray = NSDate().getNextFiveWeekdays()!
-        dayOneDayLbl.text = dayArray[0]
-        dayTwoDayLbl.text = dayArray[1]
-        dayThreeDayLbl.text = dayArray[2]
-        dayFourDayLbl.text = dayArray[3]
-        dayFiveDayLbl.text = dayArray[4]
-        
-        weatherInstance.downloadCurentWeatherDetails { () -> () in
-            //this will be called after download is done
-            self.updateUI()
-        }
-        
-        weatherInstance.downloadFutureWeatherDetails { () -> () in
-            //this will be called after download is done
-            self.updateBottomUI()
+        if hasLocation {
+            weatherInstance = WeatherInstance.init(cityName: cityName)
+            
+            let timeStyler = NSDateFormatter()
+            timeStyler.timeStyle = NSDateFormatterStyle.ShortStyle
+            currentTime = timeStyler.stringFromDate(NSDate())
+            
+            let dayArray = NSDate().getNextFiveWeekdays()!
+            dayOneDayLbl.text = dayArray[0]
+            dayTwoDayLbl.text = dayArray[1]
+            dayThreeDayLbl.text = dayArray[2]
+            dayFourDayLbl.text = dayArray[3]
+            dayFiveDayLbl.text = dayArray[4]
+            
+            weatherInstance.downloadCurentWeatherDetails { () -> () in
+                //this will be called after download is done
+                self.updateUI()
+            }
+            
+            weatherInstance.downloadFutureWeatherDetails { () -> () in
+                //this will be called after download is done
+                self.updateBottomUI()
+            }
         }
     }
     
@@ -179,6 +185,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         locationNameBtn.enabled = enabled
         sunSetRiseBtn.enabled = enabled
         locationChangeView.hidden = enabled
+        setToCurrentLocationBtn.enabled = enabled
     }
 
     @IBAction func locationChangeCancelBtnTapped(sender: AnyObject) {
@@ -264,6 +271,31 @@ class ViewController: UIViewController, UITextFieldDelegate {
         
         sunriseTimeLbl.text = ""
         sunsetTimeLbl.text = ""
+    }
+    
+    func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        self.currentLocation = manager.location!.coordinate
+        if !hasLocation {
+            cityName = "lat=\(currentLocation.latitude)&lon=\(currentLocation.longitude)"
+            hasLocation = true
+            initUI()
+            populateData()
+        }
+    }
+    
+    @IBAction func currentLocationBtnTapped(sender: AnyObject) {
+        hasLocation = false
+        getLocation()
+    }
+    
+    func getLocation()
+    {
+        self.locationManager.requestAlwaysAuthorization()
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+        }
     }
 }
 
